@@ -54,7 +54,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
   const documents = getCollectionDocuments(slug);
 
   return (
-    <div style={{ background: "#FBF6EC" }}>
+    <div style={{ background: "transparent" }}>
 
       {/* ══ HERO ══ */}
       <section style={{

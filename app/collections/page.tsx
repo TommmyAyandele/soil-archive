@@ -10,9 +10,9 @@ export default function CollectionsIndexPage() {
   const collections = getAllCollections();
 
   return (
-    <div style={{ background: "#FBF6EC", minHeight: "100vh" }}>
+    <div style={{ background: "transparent", minHeight: "100vh" }}>
       {/* Header */}
-      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "#F0DEBB" }}>
+      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(200,133,42,0.18)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{
@@ -55,7 +55,7 @@ export default function CollectionsIndexPage() {
                 <ScrollReveal key={col.slug} delay={(i % 4) as 0 | 1 | 2 | 3}>
                   <Link href={`/collections/${col.slug}`} style={{ textDecoration: "none", display: "block" }}>
                     <article className="collection-card" style={{
-                      background: "#FBF6EC", border: "1px solid rgba(201,168,76,0.3)",
+                      background: "rgba(255,248,230,0.55)", border: "1px solid rgba(201,168,76,0.3)",
                       borderRadius: 8, overflow: "hidden",
                     }}>
                       <div style={{ height: 6, background: `linear-gradient(90deg, ${col.coverColor}, #C9A84C)` }}/>

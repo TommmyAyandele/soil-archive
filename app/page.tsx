@@ -16,7 +16,7 @@ export default function HomePage() {
           minHeight: "90vh",
           display: "flex",
           alignItems: "center",
-          background: "#FBF6EC",
+          background: "transparent",
           padding: "80px 24px",
         }}
       >
@@ -99,7 +99,7 @@ export default function HomePage() {
 
       {/* ══ FEATURED COLLECTIONS ══ */}
       {featured.length > 0 && (
-        <section className="kente-border" style={{ background: "rgba(255,255,255,0.5)", padding: "80px 24px" }}>
+        <section className="kente-border" style={{ background: "rgba(255,248,230,0.4)", padding: "80px 24px", backdropFilter: "blur(1px)" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
             <ScrollReveal>
               <p style={{
@@ -152,7 +152,7 @@ export default function HomePage() {
       )}
 
       {/* ══ MISSION STATEMENT ══ */}
-      <section style={{ background: "#1C1C1A", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "rgba(28,28,26,0.88)", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
         <div aria-hidden style={{
           position: "absolute", inset: 0,
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
