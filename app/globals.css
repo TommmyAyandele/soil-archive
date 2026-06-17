@@ -39,14 +39,13 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background-color: #C8852A;
-  background-image: url('/parchment.png');
-  background-size: 100% auto;   /* fills page width, proportional height */
+  background-color: #B8782A;     /* warm fallback if image hasn't loaded */
+  background-image: url('/surface.jpg');
+  background-size: 100% auto;   /* fills width, preserves natural proportions */
   background-position: top center;
-  background-attachment: scroll; /* scroll WITH the page, not wallpaper */
-  background-repeat: repeat-y;  /* tiles vertically on tall pages */
-  background-blend-mode: multiply;
-  color: #1C1C1A;
+  background-attachment: scroll; /* moves WITH the content — you're writing on it */
+  background-repeat: repeat-y;  /* tiles vertically for very long pages */
+  color: #0F0D0A;
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.75;
