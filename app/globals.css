@@ -1,26 +1,182 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Tailwind v4 theme: African archive palette ── */
+@theme {
+  --color-parchment-50:    #FBF6EC;
+  --color-parchment-100:   #F5E6C8;
+  --color-parchment-200:   #EDD9A3;
+  --color-parchment-300:   #E3C87A;
+  --color-parchment:       #F0DEBB;
+
+  --color-ochre:           #C17D11;
+  --color-ochre-dark:      #8B5A08;
+  --color-ochre-light:     #E09A2A;
+
+  --color-sienna:          #8B3A2F;
+  --color-sienna-dark:     #6B2820;
+  --color-sienna-light:    #B55A4E;
+
+  --color-forest:          #1A3A1A;
+  --color-forest-dark:     #0F2510;
+  --color-forest-light:    #2D5A2D;
+
+  --color-gold:            #C9A84C;
+  --color-gold-light:      #E8CC7A;
+  --color-gold-dark:       #9A7A28;
+
+  --color-charcoal:        #1C1C1A;
+  --color-charcoal-light:  #3A3A38;
+  --color-charcoal-muted:  #6B6B68;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body:    "EB Garamond", Georgia, serif;
+  --font-ui:      "DM Sans", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #FBF6EC;
+  color: #1C1C1A;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Parchment grain overlay ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.45;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #1C1C1A;
+}
+
+a { color: #8B3A2F; text-decoration: none; transition: color 0.2s; }
+a:hover { color: #C17D11; }
+
+/* ── Kente strip border motif ── */
+.kente-border {
+  border-top: 3px solid transparent;
+  border-image: repeating-linear-gradient(
+    90deg,
+    #C9A84C 0px, #C9A84C 8px,
+    #8B3A2F 8px, #8B3A2F 16px,
+    #1A3A1A 16px, #1A3A1A 24px,
+    #C17D11 24px, #C17D11 32px
+  ) 1;
+}
+.kente-border-b {
+  border-bottom: 3px solid transparent;
+  border-image: repeating-linear-gradient(
+    90deg,
+    #C9A84C 0px, #C9A84C 8px,
+    #8B3A2F 8px, #8B3A2F 16px,
+    #1A3A1A 16px, #1A3A1A 24px,
+    #C17D11 24px, #C17D11 32px
+  ) 1;
+}
+
+/* ── Collection card lift hover ── */
+.collection-card {
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1),
+              box-shadow 0.35s cubic-bezier(0.16,1,0.3,1);
+  transform-origin: bottom center;
+}
+.collection-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 0 20px 48px rgba(28,28,26,0.18), 0 6px 14px rgba(28,28,26,0.10);
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
+              transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal.d1 { transition-delay: 0.1s; }
+.reveal.d2 { transition-delay: 0.2s; }
+.reveal.d3 { transition-delay: 0.3s; }
+.reveal.d4 { transition-delay: 0.4s; }
+
+/* ── Timeline ink stamp ── */
+@keyframes inkIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+.ink-entry { opacity: 0; }
+.ink-entry.visible { animation: inkIn 0.65s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+/* ── Document develop (photograph reveal) ── */
+@keyframes develop {
+  0%   { opacity: 0.2; filter: blur(5px) sepia(1) saturate(0.3); }
+  60%  { filter: blur(1px) sepia(0.2); }
+  100% { opacity: 1; filter: blur(0) sepia(0); }
+}
+.doc-reveal { animation: develop 1.4s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+/* ── Gold dust cursor ember ── */
+.cursor-ember {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  background: radial-gradient(circle, rgba(201,168,76,0.85) 0%, rgba(193,125,17,0.3) 55%, transparent 70%);
+  animation: emberFade 0.7s ease-out forwards;
+}
+@keyframes emberFade {
+  from { opacity: 0.7; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.15); }
+}
+
+/* ── Adinkra spinner ── */
+@keyframes adinkraSpin {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(0.88); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+.adinkra-spinner { animation: adinkraSpin 2s cubic-bezier(0.37,0,0.63,1) infinite; }
+
+/* ── Perspective dot ── */
+.perspective-dot {
+  transition: all 0.28s cubic-bezier(0.16,1,0.3,1);
+  cursor: pointer;
+}
+.perspective-dot.active { fill: #C9A84C; filter: drop-shadow(0 0 6px rgba(201,168,76,0.6)); }
+
+/* ── Parchment section background variant ── */
+.bg-parchment {
+  background-color: #F0DEBB;
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(193,125,17,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(139,58,47,0.05) 0%, transparent 50%);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .ink-entry, .collection-card, .doc-reveal, .cursor-ember {
+    animation: none !important;
+    transition: opacity 0.2s !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
 }
