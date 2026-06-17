@@ -12,7 +12,7 @@ export default function CollectionsIndexPage() {
   return (
     <div style={{ background: "transparent", minHeight: "100vh" }}>
       {/* Header */}
-      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(200,133,42,0.18)" }}>
+      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{
@@ -34,7 +34,7 @@ export default function CollectionsIndexPage() {
           <ScrollReveal delay={2}>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: 18, lineHeight: 1.7, color: "#6B6B68", maxWidth: 540, margin: 0,
+              fontSize: 18, lineHeight: 1.7, color: "#2C1F10", maxWidth: 540, margin: 0,
             }}>
               Each collection is a recovered archive — a place where silenced voices, buried histories, and ongoing struggles for justice are held and made accessible.
             </p>
@@ -46,7 +46,7 @@ export default function CollectionsIndexPage() {
       <section style={{ padding: "72px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           {collections.length === 0 ? (
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "#6B6B68" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "#2C1F10" }}>
               No collections found. Add a collection to the <code>content/collections/</code> directory.
             </p>
           ) : (
@@ -55,7 +55,7 @@ export default function CollectionsIndexPage() {
                 <ScrollReveal key={col.slug} delay={(i % 4) as 0 | 1 | 2 | 3}>
                   <Link href={`/collections/${col.slug}`} style={{ textDecoration: "none", display: "block" }}>
                     <article className="collection-card" style={{
-                      background: "rgba(255,248,230,0.55)", border: "1px solid rgba(201,168,76,0.3)",
+                      background: "rgba(255,248,225,0.35)", border: "1px solid rgba(201,168,76,0.3)",
                       borderRadius: 8, overflow: "hidden",
                     }}>
                       <div style={{ height: 6, background: `linear-gradient(90deg, ${col.coverColor}, #C9A84C)` }}/>
@@ -69,7 +69,7 @@ export default function CollectionsIndexPage() {
                           </span>
                           <span style={{
                             fontFamily: "var(--font-ui)", fontSize: 11,
-                            color: "#9A8A6A", letterSpacing: "0.04em",
+                            color: "#4A3520", letterSpacing: "0.04em",
                           }}>
                             {col.year}
                           </span>
@@ -83,7 +83,7 @@ export default function CollectionsIndexPage() {
                         </h2>
                         <p style={{
                           fontFamily: "var(--font-body)", fontStyle: "italic",
-                          fontSize: 15, color: "#6B6B68", margin: "0 0 20px",
+                          fontSize: 15, color: "#2C1F10", margin: "0 0 20px",
                         }}>
                           {col.subtitle}
                         </p>
@@ -97,7 +97,7 @@ export default function CollectionsIndexPage() {
                           {col.tags.slice(0, 3).map((tag) => (
                             <span key={tag} style={{
                               fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 500,
-                              color: "#6B6B68", background: "rgba(201,168,76,0.12)",
+                              color: "#2C1F10", background: "rgba(201,168,76,0.12)",
                               border: "1px solid rgba(201,168,76,0.2)",
                               borderRadius: 3, padding: "3px 8px",
                               letterSpacing: "0.06em",
@@ -135,7 +135,7 @@ export default function CollectionsIndexPage() {
                   </span>
                   <p style={{
                     fontFamily: "var(--font-heading)", fontStyle: "italic",
-                    fontSize: 18, color: "#9A8A6A", margin: 0,
+                    fontSize: 18, color: "#4A3520", margin: 0,
                   }}>
                     More collections are being researched, authenticated, and prepared for publication.
                   </p>

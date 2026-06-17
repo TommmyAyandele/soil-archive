@@ -18,7 +18,7 @@ export default function ContactPage() {
 
   return (
     <div style={{ background: "transparent" }}>
-      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(200,133,42,0.18)" }}>
+      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
@@ -31,7 +31,7 @@ export default function ContactPage() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "#6B6B68", maxWidth: 540, margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "#2C1F10", maxWidth: 540, margin: 0 }}>
               Whether you have archival material to contribute, a correction to flag, a collaboration to propose, or a question about the collections — we want to hear from you.
             </p>
           </ScrollReveal>
@@ -45,7 +45,7 @@ export default function ContactPage() {
           <ScrollReveal>
             {submitted ? (
               <div style={{
-                padding: "48px 36px", background: "rgba(26,58,26,0.04)",
+                padding: "48px 36px", background: "rgba(10,30,10,0.06)",
                 border: "1px solid rgba(26,58,26,0.15)", borderRadius: 8, textAlign: "center",
               }}>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style={{ margin: "0 auto 20px" }}>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                   <path d="M14 24l7 7 13-13" stroke="#C9A84C" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontSize: 24, color: "#1C1C1A", margin: "0 0 10px" }}>Received.</h2>
-                <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 16, color: "#6B6B68", margin: 0 }}>
+                <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 16, color: "#2C1F10", margin: 0 }}>
                   We will be in touch. Thank you for reaching out.
                 </p>
               </div>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 20, color: "#1C1C1A", margin: "0 0 12px" }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.75, color: "#3A3A38", margin: 0 }}>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.75, color: "#1A1410", margin: 0 }}>
                     {item.body}
                   </p>
                 </div>

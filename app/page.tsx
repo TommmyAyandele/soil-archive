@@ -68,7 +68,7 @@ export default function HomePage() {
           <ScrollReveal delay={2}>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: "clamp(17px, 2vw, 22px)", lineHeight: 1.7, color: "#6B6B68",
+              fontSize: "clamp(17px, 2vw, 22px)", lineHeight: 1.7, color: "#2C1F10",
               maxWidth: 560, margin: "0 0 44px",
             }}>
               The Soil Archive is a public digital archive housing suppressed African voices, histories, and justice stories. A living record of resistance and memory — not a museum, but a reckoning.
@@ -86,7 +86,7 @@ export default function HomePage() {
               </Link>
               <Link href="/about" style={{
                 fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14,
-                color: "#3A3A38", background: "transparent", padding: "13px 28px",
+                color: "#1A1410", background: "transparent", padding: "13px 28px",
                 borderRadius: 4, border: "1px solid rgba(28,28,26,0.25)",
                 textDecoration: "none", letterSpacing: "0.04em", display: "inline-block",
               }}>
@@ -99,7 +99,7 @@ export default function HomePage() {
 
       {/* ══ FEATURED COLLECTIONS ══ */}
       {featured.length > 0 && (
-        <section className="kente-border" style={{ background: "rgba(255,248,230,0.4)", padding: "80px 24px", backdropFilter: "blur(1px)" }}>
+        <section className="kente-border" style={{ background: "transparent", padding: "80px 24px", backdropFilter: "blur(1px)" }}>
           <div style={{ maxWidth: 1280, margin: "0 auto" }}>
             <ScrollReveal>
               <p style={{
@@ -129,13 +129,13 @@ export default function HomePage() {
                         <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 26, color: "#1C1C1A", margin: "0 0 10px", lineHeight: 1.2 }}>
                           {col.title}
                         </h2>
-                        <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 15, color: "#6B6B68", margin: "0 0 20px" }}>
+                        <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 15, color: "#2C1F10", margin: "0 0 20px" }}>
                           {col.subtitle}
                         </p>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
                           <div>
                             <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#8B5A08", margin: 0 }}>{col.region}</p>
-                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A8A6A", margin: "2px 0 0" }}>{col.yearRange}</p>
+                            <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#4A3520", margin: "2px 0 0" }}>{col.yearRange}</p>
                           </div>
                           <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, color: "#8B3A2F", letterSpacing: "0.04em" }}>
                             Open →
@@ -152,7 +152,7 @@ export default function HomePage() {
       )}
 
       {/* ══ MISSION STATEMENT ══ */}
-      <section style={{ background: "rgba(28,28,26,0.88)", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
+      <section style={{ background: "rgba(12,10,8,0.86)", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
         <div aria-hidden style={{
           position: "absolute", inset: 0,
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
@@ -168,7 +168,7 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.75, color: "#9A8A6A", margin: 0, maxWidth: 560 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.75, color: "#4A3520", margin: 0, maxWidth: 560 }}>
               History is not neutral. Neither is silence. This archive was built to make certain that the voices of those who were silenced by states, corporations, and colonial structures can be found, heard, and learned from — by anyone, anywhere.
             </p>
           </ScrollReveal>

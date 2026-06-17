@@ -5,7 +5,7 @@ export const metadata = { title: "About — The Soil Archive" };
 export default function AboutPage() {
   return (
     <div style={{ background: "transparent" }}>
-      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(200,133,42,0.18)" }}>
+      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
@@ -18,7 +18,7 @@ export default function AboutPage() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "#3A3A38", margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "#1A1410", margin: 0 }}>
               The Soil Archive is a public digital archive platform designed to house multiple collections of suppressed African voices, histories, and justice stories. It is built to grow — each new collection added without rebuilding anything, every voice recovered and held with care.
             </p>
           </ScrollReveal>

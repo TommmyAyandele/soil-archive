@@ -84,9 +84,9 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             {config.subtitle}
           </p>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A8A6A" }}>{config.region}</span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#4A3520" }}>{config.region}</span>
             <span style={{ color: "rgba(201,168,76,0.4)" }}>·</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#9A8A6A" }}>{config.yearRange}</span>
+            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#4A3520" }}>{config.yearRange}</span>
           </div>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", margin: "0 0 16px" }}>
                   The Nine
                 </p>
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#6B6B68", margin: "0 0 18px", fontStyle: "italic" }}>
+                <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#2C1F10", margin: "0 0 18px", fontStyle: "italic" }}>
                   Executed 10 November 1995
                 </p>
                 {[
@@ -141,7 +141,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
 
                 {/* Language selector */}
                 <div style={{ marginTop: 28, paddingTop: 20, borderTop: "1px solid rgba(201,168,76,0.12)" }}>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#6B6B68", margin: "0 0 12px" }}>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#2C1F10", margin: "0 0 12px" }}>
                     Language
                   </p>
                   {["English", "Khana", "Igbo", "Hausa", "Yoruba"].map((lang, i) => (
@@ -164,14 +164,14 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ IMMERSIVE COURTROOM ══ */}
-      <section style={{ background: "rgba(240,222,187,0.4)", padding: "80px 24px" }}>
+      <section style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— The Tribunal Room</span>
             <h2 style={SECTION_HEADING}>Immersive Courtroom Experience</h2>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: 17, lineHeight: 1.75, color: "#6B6B68", maxWidth: 600, margin: "0 0 40px",
+              fontSize: 17, lineHeight: 1.75, color: "#2C1F10", maxWidth: 600, margin: "0 0 40px",
             }}>
               Choose a position in the room. When the full experience is ready, both the visual rendering and the spatial audio will shift simultaneously to reflect your position — giving the physical sensation of moving through the tribunal space.
             </p>
@@ -220,10 +220,10 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                       {doc.type}
                     </span>
                     {doc.date && (
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#9A8A6A" }}>{doc.date}</span>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#4A3520" }}>{doc.date}</span>
                     )}
                     {doc.author && (
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#6B6B68" }}>— {doc.author}</span>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#2C1F10" }}>— {doc.author}</span>
                     )}
                   </div>
 
@@ -253,7 +253,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ TIMELINE ══ */}
-      <section style={{ background: "rgba(240,222,187,0.3)", padding: "80px 24px" }}>
+      <section style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Timeline</span>
@@ -262,7 +262,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           {timeline.length > 0 ? (
             <Timeline entries={timeline} />
           ) : (
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "#9A8A6A" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "#4A3520" }}>
               Timeline coming soon.
             </p>
           )}
@@ -282,11 +282,11 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           }}>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 17,
-              color: "#6B6B68", margin: "0 0 20px",
+              color: "#2C1F10", margin: "0 0 20px",
             }}>
               [PLACEHOLDER] Teaching resources for this collection are in preparation. This section will include:
             </p>
-            <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#3A3A38", lineHeight: 2, margin: 0 }}>
+            <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#1A1410", lineHeight: 2, margin: 0 }}>
               <li>Curriculum-aligned discussion guides</li>
               <li>Downloadable timeline posters</li>
               <li>Annotated primary source packets</li>

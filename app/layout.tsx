@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Playfair_Display, EB_Garamond, DM_Sans } from "next/font/google";
+import { Fraunces, Alegreya, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CursorEmbers from "@/components/ui/CursorEmbers";
 
-const playfair = Playfair_Display({
+/* Fraunces: optical-size serif, editorial, strong personality */
+const fraunces = Fraunces({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400", "600", "700", "900"],
@@ -13,18 +14,20 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const garamond = EB_Garamond({
+/* Alegreya: warm humanist serif, excellent long-form readability */
+const alegreya = Alegreya({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+/* Space Grotesk: geometric grotesque with character for UI labels */
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-ui",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${garamond.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${alegreya.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen flex flex-col">
         <CursorEmbers />
         <Navbar />

@@ -66,7 +66,7 @@ export default function Navbar() {
                 fontFamily: "var(--font-ui)",
                 fontWeight: 400,
                 fontSize: 10,
-                color: "#6B6B68",
+                color: "#2C1F10",
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
               }}

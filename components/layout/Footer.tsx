@@ -38,7 +38,7 @@ export default function Footer() {
               style={{
                 fontSize: 13,
                 lineHeight: 1.7,
-                color: "#9A8A6A",
+                color: "#4A3520",
                 margin: "0 0 20px",
                 maxWidth: 240,
               }}
@@ -90,7 +90,7 @@ export default function Footer() {
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C9A84C", margin: "0 0 16px" }}>
               A Note on the Archive
             </p>
-            <p style={{ fontSize: 13, lineHeight: 1.75, color: "#9A8A6A", margin: 0 }}>
+            <p style={{ fontSize: 13, lineHeight: 1.75, color: "#4A3520", margin: 0 }}>
               This archive stands with the communities whose stories it holds. We are not neutral on injustice. Content is presented with care for accuracy and dignity.
             </p>
           </div>
