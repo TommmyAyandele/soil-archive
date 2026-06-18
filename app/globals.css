@@ -39,13 +39,16 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background-color: #B8782A;     /* warm fallback if image hasn't loaded */
-  background-image: url('/surface.jpg');
-  background-size: 100% auto;   /* fills width, preserves natural proportions */
-  background-position: top center;
-  background-attachment: scroll; /* moves WITH the content — you're writing on it */
-  background-repeat: repeat-y;  /* tiles vertically for very long pages */
-  color: #0F0D0A;
+  background-color: #1a1510;
+  /* Paper texture + rgba(0,0,0,0.4) darkening overlay — matches Figma exactly */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('/surface.jpg');
+  background-size: cover, 100% auto;
+  background-position: center, top center;
+  background-attachment: scroll, scroll;
+  background-repeat: no-repeat, repeat-y;
+  color: #FFFFFF;
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.75;

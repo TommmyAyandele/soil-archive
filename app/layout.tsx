@@ -1,33 +1,38 @@
 import type { Metadata } from "next";
-import { Fraunces, Alegreya, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, Libre_Baskerville, Lora, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CursorEmbers from "@/components/ui/CursorEmbers";
 
-/* Fraunces: optical-size serif, editorial, strong personality */
-const fraunces = Fraunces({
+const cormorant = Cormorant_Garamond({
+  variable: "--font-logo",
+  subsets: ["latin"],
+  weight: ["700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const libreBaskerville = Libre_Baskerville({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["400", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-/* Alegreya: warm humanist serif, excellent long-form readability */
-const alegreya = Alegreya({
+const lora = Lora({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-/* Space Grotesk: geometric grotesque with character for UI labels */
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-ui",
+const spaceMono = Space_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${alegreya.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${libreBaskerville.variable} ${lora.variable} ${spaceMono.variable}`}>
       <body className="min-h-screen flex flex-col">
         <CursorEmbers />
         <Navbar />

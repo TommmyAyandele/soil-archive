@@ -11,89 +11,80 @@ export default function HomePage() {
       {/* ══ HERO ══ */}
       <section style={{
         minHeight: "100vh",
+        paddingTop: 100, /* navbar height */
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between",
-        padding: "80px clamp(24px, 6vw, 96px) 48px",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 120,
+        padding: "100px clamp(24px, 15.6vw, 225px) 60px",
         background: "transparent",
-        position: "relative",
+        boxSizing: "border-box",
       }}>
-        {/* Main content — vertically centred */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", maxWidth: 860 }}>
+        {/* Main content block */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 24, width: "100%", maxWidth: 989 }}>
 
-          <h1 style={{
-            fontFamily: "var(--font-heading)",
-            fontWeight: 700,
-            fontSize: "clamp(56px, 8.5vw, 110px)",
-            lineHeight: 1.02,
-            letterSpacing: "-0.01em",
-            color: "#FFFFFF",
-            margin: "0 0 32px",
-          }}>
-            These words were<br />never delivered.
-          </h1>
-
-          <p style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "clamp(16px, 1.6vw, 20px)",
-            lineHeight: 1.7,
-            color: "#FFFFFF",
-            margin: "0 0 40px",
-            maxWidth: 640,
-            opacity: 0.92,
-          }}>
-            The Soil Archive is a digital humanities platform dedicated to the preservation and public accessibility of suppressed African voices, testimonies, and historical records.
-          </p>
-
-          {/* CTA buttons */}
-          <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 16, marginBottom: 48 }}>
-            <Link href="/about" style={{
-              fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 15,
-              color: "#FFFFFF", background: "transparent",
-              border: "1.5px solid rgba(255,255,255,0.7)",
-              padding: "13px 28px", textDecoration: "none",
-              letterSpacing: "0.02em", display: "inline-block",
-              transition: "background 0.2s",
+          {/* Text + buttons group */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <h1 style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 700,
+              fontSize: "clamp(48px, 6.25vw, 90px)",
+              lineHeight: 1.02,
+              letterSpacing: "-0.06em",
+              color: "#FFFFFF",
+              margin: 0,
             }}>
-              Learn Our Mission
-            </Link>
-            <Link href="/collections" style={{
-              fontFamily: "var(--font-ui)", fontWeight: 600, fontSize: 15,
-              color: "#FFFFFF", background: "#8B4A1A",
-              border: "1.5px solid #8B4A1A",
-              padding: "13px 28px", textDecoration: "none",
-              letterSpacing: "0.02em", display: "inline-block",
-              transition: "background 0.2s",
+              These words were<br />never delivered.
+            </h1>
+
+            <p style={{
+              fontFamily: "var(--font-body)",
+              fontWeight: 500,
+              fontSize: "clamp(18px, 1.67vw, 24px)",
+              lineHeight: 1.6,
+              color: "#FFFFFF",
+              margin: 0,
+              maxWidth: 989,
             }}>
-              Enter the Archive
-            </Link>
+              The Soil Archive is a digital humanities platform dedicated to the preservation and public accessibility of suppressed African voices, testimonies, and historical records.
+            </p>
+
+            {/* Buttons */}
+            <div style={{ display: "flex", flexWrap: "wrap" as const, alignItems: "center", gap: 24 }}>
+              <Link href="/about" className="btn-outline">
+                Learn Our Mission
+              </Link>
+              <Link href="/collections" className="btn-filled">
+                Enter the Archive
+              </Link>
+            </div>
           </div>
 
-          {/* Monospace tagline */}
+          {/* Space Mono tagline */}
           <p style={{
-            fontFamily: "ui-monospace, 'Courier New', monospace",
-            fontSize: "clamp(13px, 1.2vw, 16px)",
+            fontFamily: "var(--font-mono)",
+            fontWeight: 400,
+            fontSize: "clamp(16px, 1.67vw, 24px)",
             color: "#FFFFFF",
-            opacity: 0.75,
             margin: 0,
-            letterSpacing: "0.01em",
+            lineHeight: 1.4,
           }}>
             An ever-growing archive of recovered African voices.
           </p>
         </div>
 
-        {/* Scroll indicator — bottom centre */}
-        <div style={{ textAlign: "center", paddingTop: 32 }}>
+        {/* Scroll indicator — centred */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
           <p style={{
-            fontFamily: "var(--font-ui)", fontSize: 13,
-            color: "#FFFFFF", opacity: 0.6,
-            margin: "0 0 10px", letterSpacing: "0.04em",
+            fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16,
+            color: "#FFFFFF", margin: 0, textAlign: "center",
           }}>
             Scroll to see collections
           </p>
-          <svg width="20" height="24" viewBox="0 0 20 24" fill="none" aria-hidden style={{ opacity: 0.6, animation: "arrowBounce 1.8s ease-in-out infinite" }}>
-            <line x1="10" y1="0" x2="10" y2="20" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-            <polyline points="4,14 10,21 16,14" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden style={{ animation: "arrowBounce 1.8s ease-in-out infinite" }}>
+            <line x1="20" y1="6" x2="20" y2="34" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+            <polyline points="10,26 20,35 30,26" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
           </svg>
         </div>
       </section>
@@ -179,8 +170,26 @@ export default function HomePage() {
       <style>{`
         @keyframes arrowBounce {
           0%, 100% { transform: translateY(0); }
-          50%       { transform: translateY(6px); }
+          50%       { transform: translateY(7px); }
         }
+        .btn-outline {
+          font-family: var(--font-body); font-weight: 400; font-size: 16px;
+          color: #FFFFFF; background: transparent;
+          border: 2px solid #FFFFFF; border-radius: 2px;
+          padding: 0 20px; height: 48px; display: inline-flex;
+          align-items: center; text-decoration: none;
+          transition: background 0.2s;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); color: #FFFFFF; }
+        .btn-filled {
+          font-family: var(--font-body); font-weight: 400; font-size: 16px;
+          color: #F5E6C8; background: #8B4513;
+          border: 2px solid #8B4513; border-radius: 2px;
+          padding: 0 20px; height: 48px; display: inline-flex;
+          align-items: center; text-decoration: none;
+          transition: background 0.2s;
+        }
+        .btn-filled:hover { background: #6B3410; border-color: #6B3410; color: #F5E6C8; }
       `}</style>
     </>
   );
