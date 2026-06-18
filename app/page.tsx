@@ -9,91 +9,92 @@ export default function HomePage() {
   return (
     <>
       {/* ══ HERO ══ */}
-      <section
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          minHeight: "90vh",
-          display: "flex",
-          alignItems: "center",
-          background: "transparent",
-          padding: "80px 24px",
-        }}
-      >
-        {/* Breathing Adinkra watermark */}
-        <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}>
-          <svg
-            width="600" height="600" viewBox="0 0 200 200"
-            style={{
-              position: "absolute", right: "-80px", top: "50%",
-              transform: "translateY(-50%)", opacity: 0.035,
-              animation: "slowRotate 60s linear infinite",
-            }}
-          >
-            <ellipse cx="100" cy="100" rx="50" ry="85" stroke="#C17D11" strokeWidth="2" fill="none"/>
-            <ellipse cx="100" cy="100" rx="85" ry="50" stroke="#8B3A2F" strokeWidth="2" fill="none"/>
-            <circle cx="100" cy="100" r="22" stroke="#1A3A1A" strokeWidth="2" fill="none"/>
-            <circle cx="100" cy="100" r="60" stroke="#C9A84C" strokeWidth="1" fill="none" strokeDasharray="8 6"/>
-          </svg>
-          <div style={{
-            position: "absolute", top: 0, left: "-10%", width: "40%", height: "100%",
-            backgroundImage: "repeating-linear-gradient(135deg, rgba(201,168,76,0.04) 0px, rgba(201,168,76,0.04) 2px, transparent 2px, transparent 20px)",
-            pointerEvents: "none",
-          }}/>
+      <section style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: "80px clamp(24px, 6vw, 96px) 48px",
+        background: "transparent",
+        position: "relative",
+      }}>
+        {/* Main content — vertically centred */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", maxWidth: 860 }}>
+
+          <h1 style={{
+            fontFamily: "var(--font-heading)",
+            fontWeight: 700,
+            fontSize: "clamp(56px, 8.5vw, 110px)",
+            lineHeight: 1.02,
+            letterSpacing: "-0.01em",
+            color: "#FFFFFF",
+            margin: "0 0 32px",
+          }}>
+            These words were<br />never delivered.
+          </h1>
+
+          <p style={{
+            fontFamily: "var(--font-body)",
+            fontSize: "clamp(16px, 1.6vw, 20px)",
+            lineHeight: 1.7,
+            color: "#FFFFFF",
+            margin: "0 0 40px",
+            maxWidth: 640,
+            opacity: 0.92,
+          }}>
+            The Soil Archive is a digital humanities platform dedicated to the preservation and public accessibility of suppressed African voices, testimonies, and historical records.
+          </p>
+
+          {/* CTA buttons */}
+          <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 16, marginBottom: 48 }}>
+            <Link href="/about" style={{
+              fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 15,
+              color: "#FFFFFF", background: "transparent",
+              border: "1.5px solid rgba(255,255,255,0.7)",
+              padding: "13px 28px", textDecoration: "none",
+              letterSpacing: "0.02em", display: "inline-block",
+              transition: "background 0.2s",
+            }}>
+              Learn Our Mission
+            </Link>
+            <Link href="/collections" style={{
+              fontFamily: "var(--font-ui)", fontWeight: 600, fontSize: 15,
+              color: "#FFFFFF", background: "#8B4A1A",
+              border: "1.5px solid #8B4A1A",
+              padding: "13px 28px", textDecoration: "none",
+              letterSpacing: "0.02em", display: "inline-block",
+              transition: "background 0.2s",
+            }}>
+              Enter the Archive
+            </Link>
+          </div>
+
+          {/* Monospace tagline */}
+          <p style={{
+            fontFamily: "ui-monospace, 'Courier New', monospace",
+            fontSize: "clamp(13px, 1.2vw, 16px)",
+            color: "#FFFFFF",
+            opacity: 0.75,
+            margin: 0,
+            letterSpacing: "0.01em",
+          }}>
+            An ever-growing archive of recovered African voices.
+          </p>
         </div>
 
-        <div style={{ maxWidth: 1280, margin: "0 auto", width: "100%", position: "relative", zIndex: 1 }}>
-          <ScrollReveal>
-            <span style={{
-              display: "inline-block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600,
-              letterSpacing: "0.18em", textTransform: "uppercase" as const, color: "#C17D11",
-              marginBottom: 28, borderBottom: "1px solid rgba(193,125,17,0.3)", paddingBottom: 6,
-            }}>
-              A Public Digital Archive
-            </span>
-          </ScrollReveal>
-
-          <ScrollReveal delay={1}>
-            <h1 style={{
-              fontFamily: "var(--font-heading)", fontWeight: 900,
-              fontSize: "clamp(44px, 7vw, 88px)", lineHeight: 1.05,
-              letterSpacing: "-0.025em", color: "#1C1C1A", margin: "0 0 32px", maxWidth: 840,
-            }}>
-              The earth<br/>
-              <em style={{ fontStyle: "italic", color: "#8B3A2F" }}>remembers</em><br/>
-              what states try<br/>to erase.
-            </h1>
-          </ScrollReveal>
-
-          <ScrollReveal delay={2}>
-            <p style={{
-              fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: "clamp(17px, 2vw, 22px)", lineHeight: 1.7, color: "#2C1F10",
-              maxWidth: 560, margin: "0 0 44px",
-            }}>
-              The Soil Archive is a public digital archive housing suppressed African voices, histories, and justice stories. A living record of resistance and memory — not a museum, but a reckoning.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={3}>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
-              <Link href="/collections" style={{
-                fontFamily: "var(--font-ui)", fontWeight: 600, fontSize: 14,
-                color: "#FBF6EC", background: "#1A3A1A", padding: "14px 28px",
-                borderRadius: 4, textDecoration: "none", letterSpacing: "0.06em", display: "inline-block",
-              }}>
-                Enter the Archive
-              </Link>
-              <Link href="/about" style={{
-                fontFamily: "var(--font-ui)", fontWeight: 500, fontSize: 14,
-                color: "#1A1410", background: "transparent", padding: "13px 28px",
-                borderRadius: 4, border: "1px solid rgba(28,28,26,0.25)",
-                textDecoration: "none", letterSpacing: "0.04em", display: "inline-block",
-              }}>
-                About the Archive
-              </Link>
-            </div>
-          </ScrollReveal>
+        {/* Scroll indicator — bottom centre */}
+        <div style={{ textAlign: "center", paddingTop: 32 }}>
+          <p style={{
+            fontFamily: "var(--font-ui)", fontSize: 13,
+            color: "#FFFFFF", opacity: 0.6,
+            margin: "0 0 10px", letterSpacing: "0.04em",
+          }}>
+            Scroll to see collections
+          </p>
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="none" aria-hidden style={{ opacity: 0.6, animation: "arrowBounce 1.8s ease-in-out infinite" }}>
+            <line x1="10" y1="0" x2="10" y2="20" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+            <polyline points="4,14 10,21 16,14" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          </svg>
         </div>
       </section>
 
@@ -176,9 +177,9 @@ export default function HomePage() {
       </section>
 
       <style>{`
-        @keyframes slowRotate {
-          from { transform: translateY(-50%) rotate(0deg); }
-          to   { transform: translateY(-50%) rotate(360deg); }
+        @keyframes arrowBounce {
+          0%, 100% { transform: translateY(0); }
+          50%       { transform: translateY(6px); }
         }
       `}</style>
     </>

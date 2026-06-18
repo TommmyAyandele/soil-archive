@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const NAV_LINKS = [
-  { href: "/collections", label: "Collections" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -107,15 +106,15 @@ export default function Navbar() {
               fontWeight: 600,
               fontSize: 13,
               color: "#FBF6EC",
-              background: "#1A3A1A",
-              padding: "8px 18px",
-              borderRadius: 4,
+              background: "#8B4A1A",
+              padding: "8px 20px",
+              borderRadius: 2,
               textDecoration: "none",
-              letterSpacing: "0.06em",
+              letterSpacing: "0.04em",
               transition: "background 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#C17D11")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#1A3A1A")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#6B3410")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#8B4A1A")}
           >
             View Archive
           </Link>
