@@ -16,46 +16,45 @@ export default function HomePage() {
         boxSizing: "border-box",
       }}>
         {/* Main content block */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 24, width: "100%", maxWidth: 989 }}>
+        <div style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: 989 }}>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            <h1 style={{
-              fontFamily: "var(--font-heading)",
-              fontWeight: 700,
-              fontSize: "clamp(48px, 6.25vw, 90px)",
-              lineHeight: 1.02,
-              letterSpacing: "-0.06em",
-              color: "#FFFFFF",
-              margin: 0,
-            }}>
-              These words were<br />never delivered.
-            </h1>
+          <h1 style={{
+            fontFamily: "var(--font-heading)",
+            fontWeight: 700,
+            fontSize: "clamp(48px, 6.25vw, 90px)",
+            lineHeight: 1.02,
+            letterSpacing: "-0.06em",
+            color: "#FFFFFF",
+            margin: "0 0 40px",
+          }}>
+            These words were<br />never delivered.
+          </h1>
 
-            <p style={{
-              fontFamily: "var(--font-body)",
-              fontWeight: 500,
-              fontSize: "clamp(18px, 1.67vw, 24px)",
-              lineHeight: 1.6,
-              color: "#FFFFFF",
-              margin: 0,
-              maxWidth: 989,
-            }}>
-              The Soil Archive is a digital humanities platform dedicated to the preservation and public accessibility of suppressed African voices, testimonies, and historical records.
-            </p>
+          <p style={{
+            fontFamily: "var(--font-body)",
+            fontWeight: 500,
+            fontSize: "clamp(18px, 1.67vw, 24px)",
+            lineHeight: 1.65,
+            color: "#FFFFFF",
+            margin: "0 0 48px",
+            maxWidth: 780,
+          }}>
+            The Soil Archive is a digital humanities platform dedicated to the preservation and public accessibility of suppressed African voices, testimonies, and historical records.
+          </p>
 
-            <div style={{ display: "flex", flexWrap: "wrap" as const, alignItems: "center", gap: 24 }}>
-              <Link href="/about" className="btn-outline">Learn Our Mission</Link>
-              <Link href="/collections" className="btn-filled">Enter the Archive</Link>
-            </div>
+          <div style={{ display: "flex", flexWrap: "wrap" as const, alignItems: "center", gap: 24, marginBottom: 64 }}>
+            <Link href="/about" className="btn-outline">Learn Our Mission</Link>
+            <Link href="/collections" className="btn-filled">Enter the Archive</Link>
           </div>
 
           <p style={{
             fontFamily: "var(--font-mono)",
             fontWeight: 400,
-            fontSize: "clamp(16px, 1.67vw, 24px)",
+            fontSize: "clamp(14px, 1.25vw, 20px)",
             color: "#FFFFFF",
             margin: 0,
-            lineHeight: 1.4,
+            lineHeight: 1.5,
+            opacity: 0.85,
           }}>
             An ever-growing archive of recovered African voices.
           </p>
