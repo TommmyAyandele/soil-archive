@@ -26,7 +26,7 @@ export default function HomePage() {
             fontFamily: "var(--font-heading)",
             fontWeight: 700,
             fontSize: "clamp(52px, 6.25vw, 90px)",
-            lineHeight: 1.02,
+            lineHeight: 1,
             letterSpacing: "-0.06em",
             color: "#FFFFFF",
             margin: 0,
