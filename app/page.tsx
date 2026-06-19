@@ -286,7 +286,7 @@ export default function HomePage() {
             gap: 20px !important;
             padding-bottom: 0 !important;
           }
-          .hero-h1 { font-size: 44px !important; letter-spacing: -0.04em !important; }
+          .hero-h1 { font-size: 52px !important; letter-spacing: -0.02em !important; line-height: 1.05 !important; }
           .scroll-indicator { display: none !important; }
 
           #archive {
@@ -328,7 +328,7 @@ export default function HomePage() {
 
         /* ── Small mobile (≤480px) ── */
         @media (max-width: 480px) {
-          .hero-h1 { font-size: 36px !important; }
+          .hero-h1 { font-size: 42px !important; }
           .hero-content { gap: 16px !important; }
           .btn-outline, .btn-filled { font-size: 14px !important; padding: 0 16px !important; height: 44px !important; }
         }

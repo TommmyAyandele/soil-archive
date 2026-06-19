@@ -341,13 +341,23 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           .ic-hero { min-height: auto; }
           .ic-hero .ic-left { justify-content: flex-start; }
           .ic-footnote { margin-top: 8px; }
+          .ic-grid { grid-template-columns: 1fr 1fr; }
         }
-        @media (max-width: 540px) {
+        @media (max-width: 600px) {
+          .ic-left { padding: 28px 20px !important; gap: 12px !important; }
+          .ic-hero-title { font-size: 28px !important; letter-spacing: 0 !important; }
+          .ic-hero-subtitle { font-size: 14px !important; }
+          .ic-body { font-size: 14px !important; }
+          .ic-grid { gap: 8px !important; padding: 8px !important; }
+          .ic-card-body { padding: 14px 14px 16px !important; }
+          .ic-card-desc { font-size: 12px !important; }
+        }
+        @media (max-width: 480px) {
           .ic-grid {
             grid-template-columns: 1fr !important;
             grid-template-rows: auto !important;
           }
-          .ic-hero-title { font-size: 30px !important; }
+          .ic-hero-title { font-size: 26px !important; }
         }
       `}</style>
     </div>

@@ -74,7 +74,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       <ImmersiveCourtroom heroConfig={heroConfig} />
 
       {/* ══ OVERVIEW ══ */}
-      <section aria-label="Overview and historical context" style={{ padding: "80px 24px" }}>
+      <section aria-label="Overview and historical context" className="col-section" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 64 }} className="overview-grid">
           <div>
             <ScrollReveal>
@@ -129,7 +129,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
 
 
       {/* ══ PRIMARY DOCUMENTS ══ */}
-      <section aria-label="Primary documents" style={{ padding: "80px 24px" }}>
+      <section aria-label="Primary documents" className="col-section" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Primary Documents</span>
@@ -201,7 +201,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ TIMELINE ══ */}
-      <section aria-label="Timeline of key events" style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
+      <section aria-label="Timeline of key events" className="col-section" style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Timeline</span>
@@ -218,7 +218,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ TEACHING RESOURCES ══ */}
-      <section aria-label="Teaching resources" style={{ padding: "80px 24px" }}>
+      <section aria-label="Teaching resources" className="col-section" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Teaching Resources</span>
@@ -246,14 +246,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       <style>{`
-        .overview-grid { }
-        @media (max-width: 860px) {
-          .overview-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 600px) {
-          .doc-article { padding: 20px 16px !important; }
-          .teaching-box { padding: 24px 16px !important; }
-        }
+        /* ── Prose ── */
         .prose-archive h2 { font-family: var(--font-display); font-size: 22px; color: #FFFFFF; margin: 40px 0 16px; }
         .prose-archive h3 { font-family: var(--font-display); font-size: 18px; color: #FFFFFF; margin: 32px 0 12px; }
         .prose-archive p { margin: 0 0 22px; }
@@ -263,6 +256,27 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         .prose-archive li { margin-bottom: 8px; }
         .prose-archive hr { border: none; border-top: 1px solid rgba(201,168,76,0.25); margin: 40px 0; }
         .prose-archive blockquote { border-left: 3px solid #C9A84C; margin: 0 0 22px; padding-left: 20px; font-style: italic; color: #FFFFFF; }
+
+        /* ── Tablet ── */
+        @media (max-width: 860px) {
+          .overview-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+          .col-section { padding: 52px 20px !important; }
+          .doc-article { padding: 20px 16px !important; }
+          .teaching-box { padding: 24px 16px !important; }
+          .prose-archive h2 { font-size: 18px; margin: 28px 0 12px; }
+          .prose-archive h3 { font-size: 16px; }
+          .prose-archive p, .prose-archive li { font-size: 15px !important; line-height: 1.7 !important; }
+        }
+
+        /* ── Small mobile ── */
+        @media (max-width: 480px) {
+          .col-section { padding: 40px 16px !important; }
+          .overview-grid { gap: 28px !important; }
+        }
       `}</style>
     </div>
   );

@@ -14,6 +14,7 @@ export default function Footer() {
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div
+          className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
@@ -115,6 +116,16 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .kente-border { padding: 40px 20px 28px !important; }
+          .kente-border .footer-grid { gap: 32px !important; margin-bottom: 32px !important; }
+        }
+        @media (max-width: 480px) {
+          .kente-border { padding: 32px 16px 24px !important; }
+        }
+      `}</style>
     </footer>
   );
 }
