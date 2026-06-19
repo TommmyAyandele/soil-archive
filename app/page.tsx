@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <div style={{ display: "flex", flexWrap: "wrap" as const, alignItems: "center", gap: 24 }}>
             <Link href="/about" className="btn-outline">Learn Our Mission</Link>
-            <Link href="/collections" className="btn-filled">Enter the Archive</Link>
+            <Link href="#archive" className="btn-filled">Enter the Archive</Link>
           </div>
 
           <p style={{
@@ -94,7 +94,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ ARCHIVE SECTION ══ */}
-      <section style={{
+      <section id="archive" style={{
         padding: "clamp(80px, 8.3vw, 120px) clamp(24px, 15.6vw, 225px)",
         background: "transparent",
       }}>
@@ -132,7 +132,7 @@ export default function HomePage() {
           fontFamily: "var(--font-body)",
           fontSize: "clamp(16px, 1.25vw, 20px)",
           lineHeight: 1.75,
-          color: "rgba(255,255,255,0.82)",
+          color: "#FFFFFF",
           margin: "0 0 64px",
           maxWidth: 820,
         }}>
@@ -162,7 +162,7 @@ export default function HomePage() {
                     fontFamily: "var(--font-ui)",
                     fontSize: 11,
                     fontWeight: 600,
-                    color: "rgba(255,255,255,0.38)",
+                    color: "rgba(255,255,255,0.5)",
                     letterSpacing: "0.1em",
                     display: "block",
                     marginBottom: 6,
@@ -172,7 +172,7 @@ export default function HomePage() {
                   <span style={{
                     fontFamily: "var(--font-ui)",
                     fontSize: 12,
-                    color: "rgba(255,255,255,0.38)",
+                    color: "rgba(255,255,255,0.5)",
                     letterSpacing: "0.02em",
                   }}>
                     {col.region} · {col.yearRange}
@@ -196,7 +196,7 @@ export default function HomePage() {
                   fontFamily: "var(--font-body)",
                   fontSize: 15,
                   lineHeight: 1.75,
-                  color: "rgba(255,255,255,0.6)",
+                  color: "rgba(255,255,255,0.7)",
                   margin: 0,
                   flex: 1,
                 }}>
@@ -230,7 +230,7 @@ export default function HomePage() {
                 fontFamily: "var(--font-ui)",
                 fontSize: 11,
                 fontWeight: 600,
-                color: "rgba(255,255,255,0.22)",
+                color: "rgba(255,255,255,0.35)",
                 letterSpacing: "0.1em",
                 display: "block",
                 marginBottom: 6,
@@ -240,7 +240,7 @@ export default function HomePage() {
               <span style={{
                 fontFamily: "var(--font-ui)",
                 fontSize: 12,
-                color: "rgba(255,255,255,0.22)",
+                color: "rgba(255,255,255,0.35)",
               }}>
                 To Be Announced
               </span>
@@ -251,7 +251,7 @@ export default function HomePage() {
               fontWeight: 700,
               fontSize: "clamp(28px, 3vw, 44px)",
               lineHeight: 1.1,
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(255,255,255,0.4)",
               margin: "0 0 14px",
             }}>
               Next Collection
@@ -260,7 +260,7 @@ export default function HomePage() {
             <p style={{
               fontFamily: "var(--font-body)",
               fontSize: 15,
-              color: "rgba(255,255,255,0.28)",
+              color: "rgba(255,255,255,0.38)",
               margin: 0,
               flex: 1,
             }}>
