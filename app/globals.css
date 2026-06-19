@@ -40,7 +40,9 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: #3a3530;
-  background-image: url('/paper.jpg');
+  background-image:
+    linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+    url('/paper.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
