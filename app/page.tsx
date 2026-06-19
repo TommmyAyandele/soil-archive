@@ -147,7 +147,7 @@ export default function HomePage() {
           {/* Live collections */}
           {collections.map((col) => (
             <Link key={col.slug} href={`/collections/${col.slug}`} style={{ textDecoration: "none", display: "flex" }}>
-              <article style={{
+              <article className="archive-card" style={{
                 background: "rgba(12, 10, 8, 0.62)",
                 border: "1px solid rgba(201,168,76,0.13)",
                 borderRadius: 4,
@@ -155,17 +155,7 @@ export default function HomePage() {
                 display: "flex",
                 flexDirection: "column",
                 width: "100%",
-                transition: "border-color 0.2s, background 0.2s",
-              }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,168,76,0.32)";
-                  (e.currentTarget as HTMLElement).style.background = "rgba(20, 16, 12, 0.72)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(201,168,76,0.13)";
-                  (e.currentTarget as HTMLElement).style.background = "rgba(12, 10, 8, 0.62)";
-                }}
-              >
+              }}>
                 {/* Card top meta */}
                 <div style={{ marginBottom: 18 }}>
                   <span style={{
@@ -312,6 +302,8 @@ export default function HomePage() {
           transition: background 0.2s;
         }
         .btn-filled:hover { background: #6B3410; border-color: #6B3410; color: #F5E6C8; }
+        .archive-card { transition: border-color 0.2s, background 0.2s; }
+        .archive-card:hover { border-color: rgba(201,168,76,0.32) !important; background: rgba(20,16,12,0.72) !important; }
         @media (max-width: 680px) {
           .archive-cards { grid-template-columns: 1fr !important; }
         }
