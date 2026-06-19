@@ -19,6 +19,9 @@ type Perspective = {
   label: string;
   position: string;
   description: string;
+  /* Set to the YouTube video ID (e.g. "dQw4w9WgXcQ") when the recording is ready.
+     Leave null to show the pending placeholder. */
+  videoId: string | null;
 };
 
 const PERSPECTIVES: Perspective[] = [
@@ -28,6 +31,7 @@ const PERSPECTIVES: Perspective[] = [
     position: "Tribunal Bench — North Wall",
     description:
       "From the military tribunal judge's position. The accused stand before you. The weight of the state's authority is at your back.",
+    videoId: null,
   },
   {
     id: "front",
@@ -35,6 +39,7 @@ const PERSPECTIVES: Perspective[] = [
     position: "Public Gallery — Row 1",
     description:
       "Behind the accused. You are close enough to see their faces. The tribunal's words land heavy in the air between you.",
+    videoId: null,
   },
   {
     id: "back",
@@ -42,6 +47,7 @@ const PERSPECTIVES: Perspective[] = [
     position: "Public Gallery — Rear",
     description:
       "From the rear of the gallery. The accused are small figures at the front. The room feels vast. Sound carries differently here.",
+    videoId: null,
   },
   {
     id: "gallery",
@@ -49,8 +55,37 @@ const PERSPECTIVES: Perspective[] = [
     position: "Restricted Press Section",
     description:
       "Where international observers and press were permitted to sit, under restriction. A different angle on power.",
+    videoId: null,
   },
 ];
+
+function VideoSlot({ perspective }: { perspective: Perspective }) {
+  if (perspective.videoId) {
+    return (
+      <div className="ic-video-wrap">
+        <iframe
+          className="ic-iframe"
+          src={`https://www.youtube.com/embed/${perspective.videoId}?rel=0&modestbranding=1&color=white`}
+          title={`${perspective.label} — tribunal perspective video`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="ic-video-wrap ic-video-pending" aria-label={`Video for ${perspective.label} — pending`}>
+      {/* Play button outline */}
+      <div className="ic-play-btn" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false">
+          <polygon points="5,3 18,10 5,17" fill="rgba(201,168,76,0.55)" />
+        </svg>
+      </div>
+      <p className="ic-pending-label">Video coming soon</p>
+    </div>
+  );
+}
 
 export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
   const isHero = !!heroConfig;
@@ -61,8 +96,8 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
       role="region"
       aria-label={
         isHero
-          ? `${heroConfig!.title} — immersive listening experience`
-          : "Immersive tribunal listening experience"
+          ? `${heroConfig!.title} — perspective video experience`
+          : "Immersive tribunal perspective experience"
       }
     >
       {/* ── Left panel ── */}
@@ -86,10 +121,10 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
                 ))}
               </ul>
             )}
-            <div className="ic-status" aria-label="Production status: audio in production">
+            <div className="ic-status" aria-label="Production status: video in production">
               <span className="ic-status-dot" aria-hidden="true" />
               <span className="ic-status-text">
-                Audio in production. Visual rendering forthcoming.
+                Perspective videos in production. Each view will be linked when available.
               </span>
             </div>
           </>
@@ -101,20 +136,18 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
               Port Harcourt, 1995
             </h3>
             <p className="ic-body">
-              Four spatial audio recordings will provide distinct listening experiences
-              of the 1995 Special Military Tribunal proceedings, each reflecting how
-              an individual&apos;s position in the room shaped their acoustic encounter
-              with the exercise of state power.
+              Four video recordings document the 1995 Special Military Tribunal from distinct
+              positions in the room — each reflecting how an individual&apos;s physical location
+              shaped their encounter with the proceedings.
             </p>
             <p className="ic-body">
-              Select a position to hear the tribunal from that seat. Visual rendering
-              and binaural audio will shift simultaneously to reflect the acoustic
-              character of each location.
+              Select a perspective to watch from that position. Videos will be linked as they
+              become available.
             </p>
-            <div className="ic-status" aria-label="Production status: audio in production">
+            <div className="ic-status" aria-label="Production status: video in production">
               <span className="ic-status-dot" aria-hidden="true" />
               <span className="ic-status-text">
-                Audio in production. Visual rendering forthcoming.
+                Perspective videos in production.
               </span>
             </div>
           </>
@@ -122,39 +155,18 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
       </div>
 
       {/* ── Right: 2×2 perspective card grid ── */}
-      <div className="ic-grid" role="list" aria-label="Available listening perspectives">
+      <div className="ic-grid" role="list" aria-label="Tribunal room perspectives">
         {PERSPECTIVES.map((p) => (
           <div key={p.id} className="ic-card" role="listitem">
-            <p className="ic-card-position">{p.position}</p>
-            <h4 className="ic-card-label">{p.label}</h4>
-            <p className="ic-card-desc">{p.description}</p>
-            <button
-              type="button"
-              disabled
-              aria-disabled="true"
-              aria-label={`Listen from the ${p.label} — audio not yet available`}
-              className="ic-listen-btn"
-            >
-              Listen
-              <svg
-                width="14"
-                height="10"
-                viewBox="0 0 14 10"
-                fill="none"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <line x1="0" y1="5" x2="11" y2="5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <polyline
-                  points="7,1 12,5 7,9"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-              </svg>
-            </button>
+            {/* Video — top of card, edge-to-edge */}
+            <VideoSlot perspective={p} />
+
+            {/* Text — padded below */}
+            <div className="ic-card-text">
+              <p className="ic-card-position">{p.position}</p>
+              <h4 className="ic-card-label">{p.label}</h4>
+              <p className="ic-card-desc">{p.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -168,7 +180,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           overflow: hidden;
         }
 
-        /* ── Hero mode: fills viewport, no decorative border ── */
+        /* ── Hero mode ── */
         .ic-hero {
           border: none;
           border-radius: 0;
@@ -182,11 +194,8 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           flex: 0 0 40%;
           gap: 16px;
         }
-        .ic-hero .ic-card {
-          min-height: calc((100svh - 100px) / 2);
-        }
 
-        /* ── Left panel (shared) ── */
+        /* ── Left panel ── */
         .ic-left {
           flex: 0 0 38%;
           padding: 44px 36px;
@@ -196,8 +205,15 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           flex-direction: column;
           gap: 18px;
         }
-
-        /* ── Hero left panel content ── */
+        .ic-eyebrow {
+          font-family: var(--font-ui);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #C9A84C;
+          margin: 0;
+        }
         .ic-hero-title {
           font-family: var(--font-heading);
           font-weight: 900;
@@ -247,17 +263,6 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           border-radius: 3px;
           padding: 3px 8px;
         }
-
-        /* ── Default left panel content ── */
-        .ic-eyebrow {
-          font-family: var(--font-ui);
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: #C9A84C;
-          margin: 0;
-        }
         .ic-title {
           font-family: var(--font-heading);
           font-weight: 700;
@@ -276,7 +281,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
         .ic-status {
           margin-top: auto;
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 10px;
           padding: 12px 14px;
           background: rgba(201,168,76,0.07);
@@ -292,12 +297,13 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           background: #C9A84C;
           flex-shrink: 0;
           opacity: 0.65;
+          margin-top: 3px;
         }
         .ic-status-text {
           font-family: var(--font-ui);
           font-size: 11px;
           color: rgba(201,168,76,0.8);
-          line-height: 1.5;
+          line-height: 1.6;
         }
 
         /* ── Card grid ── */
@@ -308,17 +314,68 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           grid-template-rows: 1fr 1fr;
         }
         .ic-card {
-          padding: 32px 28px;
           background: rgba(20,15,10,0.65);
           border-bottom: 1px solid rgba(201,168,76,0.12);
           border-right: 1px solid rgba(201,168,76,0.12);
           display: flex;
           flex-direction: column;
-          gap: 10px;
-          min-height: 210px;
           transition: background 0.2s;
+          overflow: hidden;
         }
         .ic-card:hover { background: rgba(30,22,14,0.78); }
+
+        /* Video slot */
+        .ic-video-wrap {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          background: rgba(8,6,4,0.95);
+          border-bottom: 1px solid rgba(201,168,76,0.1);
+          overflow: hidden;
+          flex-shrink: 0;
+        }
+        .ic-iframe {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+        .ic-video-pending {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+        .ic-play-btn {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          border: 1px solid rgba(201,168,76,0.3);
+          background: rgba(201,168,76,0.08);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .ic-pending-label {
+          font-family: var(--font-ui);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: rgba(201,168,76,0.45);
+          margin: 0;
+        }
+
+        /* Card text area */
+        .ic-card-text {
+          padding: 20px 22px 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          flex: 1;
+        }
         .ic-card-position {
           font-family: var(--font-ui);
           font-size: 10px;
@@ -331,40 +388,17 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
         .ic-card-label {
           font-family: var(--font-heading);
           font-weight: 700;
-          font-size: 19px;
+          font-size: 17px;
           color: #FFFFFF;
           margin: 0;
           line-height: 1.2;
         }
         .ic-card-desc {
           font-family: var(--font-body);
-          font-size: 14px;
+          font-size: 13px;
           line-height: 1.75;
-          color: rgba(255,255,255,0.70);
+          color: rgba(255,255,255,0.65);
           margin: 0;
-          flex: 1;
-        }
-        .ic-listen-btn {
-          margin-top: 8px;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-family: var(--font-ui);
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: rgba(201,168,76,0.55);
-          background: transparent;
-          border: 1px solid rgba(201,168,76,0.3);
-          border-radius: 3px;
-          padding: 9px 16px;
-          cursor: not-allowed;
-          width: fit-content;
-        }
-        .ic-listen-btn:focus-visible {
-          outline: 2px solid #C9A84C;
-          outline-offset: 3px;
         }
 
         /* ── Responsive ── */
@@ -377,17 +411,15 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
             padding: 32px 28px !important;
           }
           .ic-hero {
-            padding-top: 100px;
             min-height: auto;
           }
-          .ic-hero .ic-card { min-height: 180px !important; }
           .ic-status { margin-top: 8px; }
         }
         @media (max-width: 560px) {
           .ic-grid { grid-template-columns: 1fr !important; }
-          .ic-card { min-height: auto !important; padding: 24px 20px; }
           .ic-left { padding: 28px 20px !important; }
           .ic-hero-title { font-size: 32px !important; }
+          .ic-card-text { padding: 16px 18px 20px; }
         }
       `}</style>
     </div>
