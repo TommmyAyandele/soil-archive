@@ -115,14 +115,18 @@ export default function HomePage() {
         }
         .btn-filled:hover { background: #6B3410; border-color: #6B3410; color: #F5E6C8; }
         @media (max-width: 768px) {
-          .hero-section { padding-left: 20px !important; padding-right: 20px !important; }
-          .hero-content { padding-top: 130px !important; }
+          .hero-section {
+            padding: 100px 20px 48px !important;
+            justify-content: center !important;
+            height: 100svh !important;
+          }
+          .hero-content { padding-top: 0 !important; }
           .hero-h1 { font-size: 44px !important; }
           .scroll-indicator { display: none !important; }
         }
         @media (max-width: 480px) {
-          .hero-content { padding-top: 116px !important; gap: 16px !important; }
           .hero-h1 { font-size: 38px !important; letter-spacing: -0.04em !important; }
+          .hero-content { gap: 16px !important; }
         }
       `}</style>
     </>
