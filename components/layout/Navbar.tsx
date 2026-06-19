@@ -27,7 +27,7 @@ export default function Navbar() {
           The Soil Archive
         </div>
         <div className="nav-logo-sub" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16, color: "rgba(255,255,255,0.7)", lineHeight: 1.4, marginTop: 2 }}>
-          African Voices, Recovered
+          African History, Documented
         </div>
       </Link>
 

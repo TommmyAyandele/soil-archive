@@ -36,12 +36,12 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Soil Archive — African Voices, Recovered",
+  title: "The Soil Archive — African History, Documented",
   description:
     "A public digital archive housing suppressed African voices, histories, and justice stories. Collection 001: The Ogoni Nine.",
   openGraph: {
     title: "The Soil Archive",
-    description: "African voices, recovered. A living record of resistance and memory.",
+    description: "African history, documented. A living record of resistance and memory.",
     type: "website",
   },
 };

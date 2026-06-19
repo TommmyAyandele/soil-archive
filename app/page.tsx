@@ -233,7 +233,7 @@ export default function HomePage() {
           © {new Date().getFullYear()} The Soil Archive — Public archive. Not for commercial use.
         </span>
         <span style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 12, color: "rgba(255,255,255,0.4)" }}>
-          African voices, recovered.
+          African history, documented.
         </span>
       </footer>
 
