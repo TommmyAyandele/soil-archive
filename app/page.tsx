@@ -136,7 +136,7 @@ export default function HomePage() {
                 <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.7)", margin: 0, flex: 1 }}>
                   {col.description ?? col.subtitle}
                 </p>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#C9A84C", margin: "28px 0 0" }}>
+                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#FFFFFF", margin: "28px 0 0" }}>
                   Enter Collection →
                 </p>
               </article>
@@ -157,7 +157,7 @@ export default function HomePage() {
               Next Collection
             </h3>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.38)", margin: 0, flex: 1 }}>Coming Soon.</p>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(201,168,76,0.35)", margin: "28px 0 0" }}>Enter Collection →</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.2)", margin: "28px 0 0" }}>Enter Collection →</p>
           </article>
         </div>
       </section>

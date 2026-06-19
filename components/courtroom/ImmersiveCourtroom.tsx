@@ -137,7 +137,11 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
               <p className="ic-card-position">{p.position}</p>
               <h4 className="ic-card-label">{p.label}</h4>
               <p className="ic-card-desc">{p.description}</p>
-              <p className="ic-card-cta" aria-hidden={!p.videoId}>
+              <p
+                className="ic-card-cta"
+                aria-hidden={!p.videoId}
+                style={{ color: p.videoId ? "#FFFFFF" : "rgba(255,255,255,0.3)" }}
+              >
                 {p.videoId ? "Watch Recording →" : "Recording forthcoming."}
               </p>
             </div>
@@ -323,7 +327,6 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
         .ic-card-cta {
           font-family: var(--font-body);
           font-size: 13px;
-          color: rgba(201,168,76,0.5);
           margin: 8px 0 0;
         }
 
