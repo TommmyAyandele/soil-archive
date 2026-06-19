@@ -273,18 +273,18 @@ export default function HomePage() {
         /* ── Mobile (≤768px) ── */
         @media (max-width: 768px) {
           .hero-section {
-            height: 100svh !important;
-            padding: 100px 20px 0 !important;
+            height: auto !important;
+            padding: 148px 24px 80px !important;
             justify-content: flex-start !important;
           }
           .hero-content {
             padding-top: 0 !important;
-            flex: 1 !important;
+            flex: none !important;
             display: flex !important;
             flex-direction: column !important;
-            justify-content: center !important;
+            justify-content: flex-start !important;
             gap: 20px !important;
-            padding-bottom: 40px !important;
+            padding-bottom: 0 !important;
           }
           .hero-h1 { font-size: 44px !important; letter-spacing: -0.04em !important; }
           .scroll-indicator { display: none !important; }
