@@ -69,7 +69,7 @@ export default function CollectionsIndexPage() {
                           </span>
                           <span style={{
                             fontFamily: "var(--font-ui)", fontSize: 11,
-                            color: "#4A3520", letterSpacing: "0.04em",
+                            color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em",
                           }}>
                             {col.year}
                           </span>
@@ -77,18 +77,18 @@ export default function CollectionsIndexPage() {
 
                         <h2 style={{
                           fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 24,
-                          color: "#1C1C1A", margin: "0 0 8px", lineHeight: 1.2,
+                          color: "#FFFFFF", margin: "0 0 8px", lineHeight: 1.2,
                         }}>
                           {col.title}
                         </h2>
                         <p style={{
                           fontFamily: "var(--font-body)", fontStyle: "italic",
-                          fontSize: 15, color: "#2C1F10", margin: "0 0 20px",
+                          fontSize: 15, color: "#FFFFFF", margin: "0 0 20px",
                         }}>
                           {col.subtitle}
                         </p>
 
-                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#8B5A08", margin: "0 0 16px" }}>
+                        <p style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#C9A84C", margin: "0 0 16px" }}>
                           {col.region}
                         </p>
 
@@ -97,7 +97,7 @@ export default function CollectionsIndexPage() {
                           {col.tags.slice(0, 3).map((tag) => (
                             <span key={tag} style={{
                               fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 500,
-                              color: "#2C1F10", background: "rgba(201,168,76,0.12)",
+                              color: "rgba(255,255,255,0.8)", background: "rgba(201,168,76,0.12)",
                               border: "1px solid rgba(201,168,76,0.2)",
                               borderRadius: 3, padding: "3px 8px",
                               letterSpacing: "0.06em",

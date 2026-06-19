@@ -191,7 +191,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             {documents.map((doc, i) => (
               <ScrollReveal key={i} delay={(i % 3) as 0 | 1 | 2}>
                 <article className="doc-article" style={{
-                  background: doc.placeholder ? "rgba(255,255,255,0.4)" : "#FDFAF3",
+                  background: "rgba(20,15,10,0.55)",
                   border: `1px solid ${doc.placeholder ? "rgba(201,168,76,0.18)" : "rgba(201,168,76,0.35)"}`,
                   borderRadius: 8,
                   padding: "32px 36px",
@@ -214,22 +214,22 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                     <span style={{
                       fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700,
                       letterSpacing: "0.14em", textTransform: "uppercase" as const,
-                      color: "#8B5A08", background: "rgba(193,125,17,0.1)",
-                      border: "1px solid rgba(193,125,17,0.2)", borderRadius: 3, padding: "3px 8px",
+                      color: "#C9A84C", background: "rgba(201,168,76,0.12)",
+                      border: "1px solid rgba(201,168,76,0.25)", borderRadius: 3, padding: "3px 8px",
                     }}>
                       {doc.type}
                     </span>
                     {doc.date && (
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#4A3520" }}>{doc.date}</span>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>{doc.date}</span>
                     )}
                     {doc.author && (
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "#2C1F10" }}>— {doc.author}</span>
+                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>— {doc.author}</span>
                     )}
                   </div>
 
                   <h3 style={{
                     fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 20,
-                    color: "#1C1C1A", margin: "0 0 18px",
+                    color: "#FFFFFF", margin: "0 0 18px",
                   }}>
                     {doc.title}
                   </h3>
@@ -238,7 +238,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                     className={doc.type === "photograph" ? "doc-reveal" : ""}
                     style={{
                       fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.82,
-                      color: doc.placeholder ? "#9A8A6A" : "#2A2A28",
+                      color: "#FFFFFF",
                       whiteSpace: "pre-wrap",
                       fontStyle: doc.type === "poem" ? "italic" : "normal",
                     }}
