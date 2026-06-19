@@ -26,12 +26,12 @@ export default function ContactPage() {
             </span>
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 60px)", lineHeight: 1.1, color: "#F5E6C8", margin: "0 0 20px" }}>
+            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 60px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 20px" }}>
               Get in Touch
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "rgba(245,230,200,0.85)", maxWidth: 540, margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: 0 }}>
               Whether you have archival material to contribute, a correction to flag, a collaboration to propose, or a question about the collections — we want to hear from you.
             </p>
           </ScrollReveal>
@@ -52,8 +52,8 @@ export default function ContactPage() {
                   <circle cx="24" cy="24" r="22" stroke="#1A3A1A" strokeWidth="1.5"/>
                   <path d="M14 24l7 7 13-13" stroke="#C9A84C" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <h2 style={{ fontFamily: "var(--font-heading)", fontSize: 24, color: "#F5E6C8", margin: "0 0 10px" }}>Received.</h2>
-                <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 16, color: "rgba(245,230,200,0.85)", margin: 0 }}>
+                <h2 style={{ fontFamily: "var(--font-heading)", fontSize: 24, color: "#FFFFFF", margin: "0 0 10px" }}>Received.</h2>
+                <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 16, color: "rgba(255,255,255,0.85)", margin: 0 }}>
                   We will be in touch. Thank you for reaching out.
                 </p>
               </div>
@@ -119,10 +119,10 @@ export default function ContactPage() {
                 },
               ].map((item) => (
                 <div key={item.title} style={{ marginBottom: 36, paddingBottom: 36, borderBottom: "1px solid rgba(201,168,76,0.2)" }}>
-                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 20, color: "#F5E6C8", margin: "0 0 12px" }}>
+                  <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 20, color: "#FFFFFF", margin: "0 0 12px" }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.75, color: "rgba(245,230,200,0.85)", margin: 0 }}>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.85)", margin: 0 }}>
                     {item.body}
                   </p>
                 </div>

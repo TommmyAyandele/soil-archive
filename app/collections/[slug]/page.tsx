@@ -40,7 +40,7 @@ const SECTION_HEADING: React.CSSProperties = {
   fontWeight: 700,
   fontSize: "clamp(24px, 3.5vw, 40px)",
   lineHeight: 1.15,
-  color: "#F5E6C8",
+  color: "#FFFFFF",
   margin: "0 0 28px",
 };
 
@@ -76,7 +76,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           <h1 style={{
             fontFamily: "var(--font-heading)", fontWeight: 900,
             fontSize: "clamp(40px, 6vw, 76px)", lineHeight: 1.05,
-            color: "#F5E6C8", margin: "0 0 16px",
+            color: "#FFFFFF", margin: "0 0 16px",
           }}>
             {config.title}
           </h1>
@@ -101,7 +101,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             {overview && (
               <div
                 className="prose-archive"
-                style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(245,230,200,0.85)" }}
+                style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.85)" }}
                 dangerouslySetInnerHTML={{ __html: mdToHtml(overview.content) }}
               />
             )}
@@ -117,7 +117,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", margin: "0 0 16px" }}>
                   The Nine
                 </p>
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "rgba(245,230,200,0.5)", margin: "0 0 18px", fontStyle: "italic" }}>
+                <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "rgba(255,255,255,0.5)", margin: "0 0 18px", fontStyle: "italic" }}>
                   Executed 10 November 1995
                 </p>
                 {[
@@ -141,14 +141,14 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
 
                 {/* Language selector */}
                 <div style={{ marginTop: 28, paddingTop: 20, borderTop: "1px solid rgba(201,168,76,0.12)" }}>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "rgba(245,230,200,0.5)", margin: "0 0 12px" }}>
+                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", margin: "0 0 12px" }}>
                     Language
                   </p>
                   {["English", "Khana", "Igbo", "Hausa", "Yoruba"].map((lang, i) => (
                     <button key={lang} disabled={i > 0} style={{
                       display: "block", width: "100%", textAlign: "left" as const,
                       fontFamily: "var(--font-ui)", fontSize: 13,
-                      color: i === 0 ? "#E3C87A" : "rgba(245,230,200,0.3)",
+                      color: i === 0 ? "#E3C87A" : "rgba(255,255,255,0.3)",
                       background: "none", border: "none", padding: "4px 0",
                       cursor: i === 0 ? "default" : "not-allowed",
                       fontWeight: i === 0 ? 600 : 400,
@@ -171,7 +171,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             <h2 style={SECTION_HEADING}>Immersive Courtroom Experience</h2>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: 17, lineHeight: 1.75, color: "rgba(245,230,200,0.8)", maxWidth: 600, margin: "0 0 40px",
+              fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.8)", maxWidth: 600, margin: "0 0 40px",
             }}>
               Choose a position in the room. When the full experience is ready, both the visual rendering and the spatial audio will shift simultaneously to reflect your position — giving the physical sensation of moving through the tribunal space.
             </p>
@@ -262,7 +262,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           {timeline.length > 0 ? (
             <Timeline entries={timeline} />
           ) : (
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "rgba(245,230,200,0.5)" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "rgba(255,255,255,0.5)" }}>
               Timeline coming soon.
             </p>
           )}
@@ -282,11 +282,11 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           }}>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 17,
-              color: "rgba(245,230,200,0.8)", margin: "0 0 20px",
+              color: "rgba(255,255,255,0.8)", margin: "0 0 20px",
             }}>
               [PLACEHOLDER] Teaching resources for this collection are in preparation. This section will include:
             </p>
-            <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(245,230,200,0.85)", lineHeight: 2, margin: 0 }}>
+            <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.85)", lineHeight: 2, margin: 0 }}>
               <li>Curriculum-aligned discussion guides</li>
               <li>Downloadable timeline posters</li>
               <li>Annotated primary source packets</li>
@@ -306,15 +306,15 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           .doc-article { padding: 20px 16px !important; }
           .teaching-box { padding: 24px 16px !important; }
         }
-        .prose-archive h2 { font-family: var(--font-heading); font-size: 22px; color: #F5E6C8; margin: 40px 0 16px; }
-        .prose-archive h3 { font-family: var(--font-heading); font-size: 18px; color: #F5E6C8; margin: 32px 0 12px; }
+        .prose-archive h2 { font-family: var(--font-heading); font-size: 22px; color: #FFFFFF; margin: 40px 0 16px; }
+        .prose-archive h3 { font-family: var(--font-heading); font-size: 18px; color: #FFFFFF; margin: 32px 0 12px; }
         .prose-archive p { margin: 0 0 22px; }
-        .prose-archive strong { font-weight: 700; color: #F5E6C8; }
+        .prose-archive strong { font-weight: 700; color: #FFFFFF; }
         .prose-archive em { font-style: italic; }
         .prose-archive ul, .prose-archive ol { padding-left: 24px; margin: 0 0 22px; }
         .prose-archive li { margin-bottom: 8px; }
         .prose-archive hr { border: none; border-top: 1px solid rgba(201,168,76,0.25); margin: 40px 0; }
-        .prose-archive blockquote { border-left: 3px solid #C9A84C; margin: 0 0 22px; padding-left: 20px; font-style: italic; color: rgba(245,230,200,0.6); }
+        .prose-archive blockquote { border-left: 3px solid #C9A84C; margin: 0 0 22px; padding-left: 20px; font-style: italic; color: rgba(255,255,255,0.6); }
       `}</style>
     </div>
   );
