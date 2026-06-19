@@ -328,7 +328,12 @@ export default function HomePage() {
         /* ── Grid stacking ── */
         @media (max-width: 680px) {
           .archive-cards { grid-template-columns: 1fr !important; }
-          .about-cols { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 860px) {
+          .about-cols {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
         }
       `}</style>
     </>
