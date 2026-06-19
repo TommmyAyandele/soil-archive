@@ -24,10 +24,10 @@ export default function HomePage() {
         }}>
           <h1 className="hero-h1" style={{
             fontFamily: "var(--font-display)",
-            fontWeight: 700,
-            fontSize: "clamp(52px, 6.25vw, 90px)",
-            lineHeight: 1,
-            letterSpacing: "-0.06em",
+            fontWeight: 400,
+            fontSize: "clamp(56px, 7vw, 100px)",
+            lineHeight: 1.08,
+            letterSpacing: "-0.01em",
             color: "#FFFFFF",
             margin: 0,
           }}>
@@ -92,12 +92,12 @@ export default function HomePage() {
         <span style={{
           fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600,
           letterSpacing: "0.16em", textTransform: "uppercase" as const,
-          color: "#C9A84C", display: "block", marginBottom: 28,
+          color: "rgba(255,255,255,0.5)", display: "block", marginBottom: 28,
         }}>
           The Archive
         </span>
         <h2 style={{
-          fontFamily: "var(--font-display)", fontWeight: 700,
+          fontFamily: "var(--font-display)", fontWeight: 400,
           fontSize: "clamp(40px, 5.3vw, 76px)", lineHeight: 1.05,
           letterSpacing: "-0.03em", color: "#FFFFFF",
           margin: "0 0 28px", maxWidth: 900,
@@ -130,7 +130,7 @@ export default function HomePage() {
                     {col.region} · {col.yearRange}
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 14px" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 14px" }}>
                   {col.title}
                 </h3>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.7)", margin: 0, flex: 1 }}>
@@ -153,7 +153,7 @@ export default function HomePage() {
               </span>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(255,255,255,0.35)" }}>To Be Announced</span>
             </div>
-            <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, color: "rgba(255,255,255,0.4)", margin: "0 0 14px" }}>
+            <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 3vw, 44px)", lineHeight: 1.1, color: "rgba(255,255,255,0.4)", margin: "0 0 14px" }}>
               Next Collection
             </h3>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "rgba(255,255,255,0.38)", margin: 0, flex: 1 }}>Coming Soon.</p>
@@ -169,10 +169,10 @@ export default function HomePage() {
         scrollMarginTop: 100,
       }}>
         <div style={{ maxWidth: 860 }}>
-          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
+          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", marginBottom: 20 }}>
             About the Archive
           </span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 1.05, color: "#FFFFFF", margin: "0 0 40px" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 1.05, color: "#FFFFFF", margin: "0 0 40px" }}>
             A record against erasure.
           </h2>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: "0 0 24px" }}>
@@ -186,13 +186,13 @@ export default function HomePage() {
           </p>
           <div className="about-cols" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
             <div style={{ background: "rgba(20,15,10,0.55)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8, padding: "32px 28px" }}>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "#C9A84C", margin: "0 0 16px" }}>Our Method</h3>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 22, color: "#FFFFFF", margin: "0 0 16px" }}>Our Method</h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: 0 }}>
                 Each collection begins with archival research and community engagement. Primary sources are gathered, verified, and contextualized before any digital production begins. Immersive media is developed only after the historical record has been established with rigor and care.
               </p>
             </div>
             <div style={{ background: "rgba(20,15,10,0.55)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8, padding: "32px 28px" }}>
-              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 22, color: "#C9A84C", margin: "0 0 16px" }}>Our Commitment</h3>
+              <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 22, color: "#FFFFFF", margin: "0 0 16px" }}>Our Commitment</h3>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: 0 }}>
                 The Soil Archive is a living platform. Collections are added as research is completed and community consent is secured. Every record published here has been handled with the dignity its subjects deserve.
               </p>
@@ -208,10 +208,10 @@ export default function HomePage() {
         scrollMarginTop: 100,
       }}>
         <div style={{ maxWidth: 860 }}>
-          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
+          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", marginBottom: 20 }}>
             Get in Touch
           </span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 16px" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 16px" }}>
             Contribute to the record.
           </h2>
           <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.8)", margin: "0 0 48px", maxWidth: 520 }}>

@@ -75,9 +75,9 @@ export default function Timeline({ entries }: Props) {
             <span
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 700,
+                fontWeight: 400,
                 fontSize: 13,
-                color: "#C17D11",
+                color: "rgba(255,255,255,0.55)",
                 display: "block",
                 letterSpacing: "0.04em",
               }}
@@ -115,7 +115,7 @@ export default function Timeline({ entries }: Props) {
             <p
               style={{
                 fontFamily: "var(--font-display)",
-                fontWeight: 700,
+                fontWeight: 400,
                 fontSize: 16,
                 color: "#1C1C1A",
                 margin: "0 0 8px",

@@ -183,15 +183,15 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           font-weight: 600;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #C9A84C;
+          color: rgba(255,255,255,0.5);
           margin: 0;
         }
         .ic-hero-title {
           font-family: var(--font-display);
-          font-weight: 900;
+          font-weight: 400;
           font-size: clamp(32px, 3.8vw, 56px);
-          line-height: 1.05;
-          letter-spacing: -0.03em;
+          line-height: 1.1;
+          letter-spacing: -0.01em;
           color: #FFFFFF;
           margin: 0;
         }
@@ -310,7 +310,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
         }
         .ic-card-label {
           font-family: var(--font-display);
-          font-weight: 700;
+          font-weight: 400;
           font-size: clamp(16px, 1.5vw, 20px);
           color: #FFFFFF;
           margin: 0;

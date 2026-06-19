@@ -6,7 +6,7 @@ export default function Footer() {
       className="kente-border"
       style={{
         background: "#1C1C1A",
-        color: "#E3C87A",
+        color: "rgba(255,255,255,0.7)",
         fontFamily: "var(--font-mono)",
         padding: "56px 24px 36px",
         marginTop: "auto",
@@ -57,10 +57,10 @@ export default function Footer() {
 
           {/* Collections */}
           <div>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C9A84C", margin: "0 0 16px" }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
               Collections
             </p>
-            <Link href="/collections/ogoni-nine" style={{ display: "block", fontSize: 14, color: "#C8B89A", marginBottom: 10, textDecoration: "none" }}>
+            <Link href="/collections/ogoni-nine" style={{ display: "block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
               001 — The Ogoni Nine
             </Link>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontStyle: "italic", margin: 0 }}>
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Navigate */}
           <div>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C9A84C", margin: "0 0 16px" }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
               Navigate
             </p>
             {[
@@ -79,7 +79,7 @@ export default function Footer() {
               { href: "/about", label: "About the Archive" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
-              <Link key={href} href={href} style={{ display: "block", fontSize: 14, color: "#C8B89A", marginBottom: 10, textDecoration: "none" }}>
+              <Link key={href} href={href} style={{ display: "block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
                 {label}
               </Link>
             ))}
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Mission note */}
           <div>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C9A84C", margin: "0 0 16px" }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
               A Note on the Archive
             </p>
             <p style={{ fontSize: 13, lineHeight: 1.75, color: "rgba(255,255,255,0.6)", margin: 0 }}>

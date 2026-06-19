@@ -31,14 +31,14 @@ const SECTION_LABEL: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "#C17D11",
+  color: "rgba(255,255,255,0.5)",
   display: "block",
   marginBottom: 20,
 };
 
 const SECTION_HEADING: React.CSSProperties = {
   fontFamily: "var(--font-display)",
-  fontWeight: 700,
+  fontWeight: 400,
   fontSize: "clamp(24px, 3.5vw, 40px)",
   lineHeight: 1.15,
   color: "#FFFFFF",
@@ -96,7 +96,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 background: "#1C1C1A", borderRadius: 8, padding: "28px 24px",
                 position: "sticky", top: 80,
               }}>
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", margin: "0 0 16px" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
                   The Nine
                 </p>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#FFFFFF", margin: "0 0 18px", fontStyle: "italic" }}>
@@ -115,7 +115,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 ].map((name) => (
                   <div key={name} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
                     <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#C9A84C", flexShrink: 0 }}/>
-                    <span style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "#E3C87A", lineHeight: 1.3 }}>
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "#FFFFFF", lineHeight: 1.3 }}>
                       {name}
                     </span>
                   </div>
@@ -176,7 +176,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                   </div>
 
                   <h3 style={{
-                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20,
+                    fontFamily: "var(--font-display)", fontWeight: 400, fontSize: 20,
                     color: "#FFFFFF", margin: "0 0 18px",
                   }}>
                     {doc.title}

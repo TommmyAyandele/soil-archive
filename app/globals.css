@@ -67,7 +67,7 @@ p, li, blockquote {
 }
 
 a { color: inherit; text-decoration: none; transition: color 0.2s; }
-a:hover { color: #C9A84C; }
+a:hover { color: #FFFFFF; }
 
 /* ── Skip to main content (accessibility) ── */
 .skip-link {
