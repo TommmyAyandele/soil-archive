@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <>
       {/* ══ HERO ══ */}
-      <section className="hero-section" style={{
+      <section className="hero-section" aria-label="Introduction" style={{
         height: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -39,7 +39,7 @@ export default function HomePage() {
             fontWeight: 500,
             fontSize: "clamp(17px, 1.67vw, 24px)",
             lineHeight: 1.6,
-            color: "#FFFFFF",
+            color: "rgba(255,255,255,0.82)",
             margin: 0,
             maxWidth: 880,
           }}>
@@ -56,7 +56,7 @@ export default function HomePage() {
             fontFamily: "var(--font-mono)",
             fontWeight: 400,
             fontSize: "clamp(14px, 1.25vw, 24px)",
-            color: "#FFFFFF",
+            color: "rgba(255,255,255,0.55)",
             margin: 0,
             lineHeight: 1.5,
           }}>
@@ -84,7 +84,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ ARCHIVE ══ */}
-      <section id="archive" style={{
+      <section id="archive" aria-label="The Archive — collections" style={{
         padding: "clamp(80px, 8.3vw, 120px) clamp(24px, 15.6vw, 225px)",
         background: "transparent",
         scrollMarginTop: 100,
@@ -106,16 +106,16 @@ export default function HomePage() {
         </h2>
         <p style={{
           fontFamily: "var(--font-body)", fontSize: "clamp(16px, 1.25vw, 20px)",
-          lineHeight: 1.75, color: "#FFFFFF", margin: "0 0 64px", maxWidth: 820,
+          lineHeight: 1.75, color: "rgba(255,255,255,0.82)", margin: "0 0 64px", maxWidth: 820,
         }}>
           Each collection in The Soil Archive documents a distinct episode of historical
           suppression. Primary sources, contextual scholarship, and immersive media are
           brought together to support research, teaching, and public memory.
         </p>
 
-        <div className="archive-cards" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div className="archive-cards" role="list" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
           {collections.map((col) => (
-            <Link key={col.slug} href={`/collections/${col.slug}`} style={{ textDecoration: "none", display: "flex" }}>
+            <Link key={col.slug} href={`/collections/${col.slug}`} aria-label={`Enter collection: ${col.title}`} style={{ textDecoration: "none", display: "flex" }} role="listitem">
               <article className="archive-card" style={{
                 background: "rgba(12, 10, 8, 0.62)",
                 border: "1px solid rgba(201,168,76,0.13)",
@@ -143,7 +143,7 @@ export default function HomePage() {
             </Link>
           ))}
 
-          <article style={{
+          <article aria-label="Next collection — to be announced" role="listitem" style={{
             background: "rgba(12, 10, 8, 0.4)", border: "1px solid rgba(201,168,76,0.08)",
             borderRadius: 4, padding: "32px 32px 28px", display: "flex", flexDirection: "column",
           }}>
@@ -163,7 +163,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ ABOUT ══ */}
-      <section id="about" style={{
+      <section id="about" aria-label="About the Archive" style={{
         padding: "clamp(80px, 8vw, 120px) clamp(24px, 15.6vw, 225px)",
         background: "rgba(180,110,20,0.06)",
         scrollMarginTop: 100,
@@ -175,25 +175,25 @@ export default function HomePage() {
           <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 1.05, color: "#FFFFFF", margin: "0 0 40px" }}>
             A record against erasure.
           </h2>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 24px" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: "0 0 24px" }}>
             The Soil Archive is a digital humanities initiative dedicated to the preservation, contextualization, and public accessibility of suppressed African historical records. It brings together primary documents, oral histories, archival materials, and immersive digital media to create publicly accessible collections that support scholarship, pedagogy, and civic engagement.
           </p>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 24px" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: "0 0 24px" }}>
             The archive operates at the intersection of digital humanities, postcolonial studies, African history, and environmental humanities. Each collection is developed through rigorous historical research, community consultation, and the integration of emerging technologies including AI-assisted voice synthesis, spatial audio, and immersive 3D environments.
           </p>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 48px" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: "0 0 48px" }}>
             The Soil Archive is committed to ensuring that the communities whose histories it documents are active participants in the production of knowledge, not merely subjects of it. Each collection is developed in consultation with relevant community members, scholars, and cultural custodians.
           </p>
           <div className="about-cols" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
             <div style={{ background: "rgba(20,15,10,0.55)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8, padding: "32px 28px" }}>
               <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 22, color: "#C9A84C", margin: "0 0 16px" }}>Our Method</h3>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "#FFFFFF", margin: 0 }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: 0 }}>
                 Each collection begins with archival research and community engagement. Primary sources are gathered, verified, and contextualized before any digital production begins. Immersive media is developed only after the historical record has been established with rigor and care.
               </p>
             </div>
             <div style={{ background: "rgba(20,15,10,0.55)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8, padding: "32px 28px" }}>
               <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 22, color: "#C9A84C", margin: "0 0 16px" }}>Our Commitment</h3>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "#FFFFFF", margin: 0 }}>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "rgba(255,255,255,0.82)", margin: 0 }}>
                 The Soil Archive is a living platform. Collections are added as research is completed and community consent is secured. Every record published here has been handled with the dignity its subjects deserve.
               </p>
             </div>
@@ -202,7 +202,7 @@ export default function HomePage() {
       </section>
 
       {/* ══ CONTACT ══ */}
-      <section id="contact" style={{
+      <section id="contact" aria-label="Contact the archive" style={{
         padding: "clamp(80px, 8vw, 120px) clamp(24px, 15.6vw, 225px)",
         background: "transparent",
         scrollMarginTop: 100,

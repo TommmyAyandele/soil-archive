@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header style={{
+    <header role="banner" aria-label="Site header" style={{
       position: "fixed",
       top: 0,
       left: 0,
@@ -22,7 +22,7 @@ export default function Navbar() {
       padding: "0 clamp(24px, 6vw, 120px)",
     }}>
       {/* Logo */}
-      <Link href="/" style={{ textDecoration: "none", maxWidth: 230, flexShrink: 1 }}>
+      <Link href="/" aria-label="The Soil Archive — home" style={{ textDecoration: "none", maxWidth: 230, flexShrink: 1 }}>
         <div className="nav-logo-title" style={{ fontFamily: "var(--font-logo)", fontWeight: 700, fontSize: 32, color: "#FFFFFF", lineHeight: 1.15 }}>
           The Soil Archive
         </div>
@@ -32,7 +32,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop nav */}
-      <nav style={{ display: "flex", alignItems: "center", gap: 64 }} className="nav-desktop">
+      <nav role="navigation" aria-label="Primary navigation" style={{ display: "flex", alignItems: "center", gap: 64 }} className="nav-desktop">
         <div style={{ display: "flex", alignItems: "center", gap: 64 }}>
           <Link href="/#about" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
             About
@@ -58,20 +58,27 @@ export default function Navbar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="mobile-nav-menu"
         className="nav-mobile-btn"
         style={{ background: "none", border: "none", cursor: "pointer", padding: 4 }}
       >
-        <span style={{ fontSize: 24, color: "#FFFFFF" }}>{menuOpen ? "✕" : "☰"}</span>
+        <span aria-hidden="true" style={{ fontSize: 24, color: "#FFFFFF" }}>{menuOpen ? "✕" : "☰"}</span>
       </button>
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div style={{
-          position: "absolute", top: 100, left: 0, right: 0,
-          background: "rgba(20,16,12,0.97)",
-          padding: "24px clamp(24px, 6vw, 120px) 32px",
-        }}>
+        <nav
+          id="mobile-nav-menu"
+          role="navigation"
+          aria-label="Mobile navigation"
+          style={{
+            position: "absolute", top: 100, left: 0, right: 0,
+            background: "rgba(20,16,12,0.97)",
+            padding: "24px clamp(24px, 6vw, 120px) 32px",
+          }}
+        >
           {[
             { href: "/#about", label: "About" },
             { href: "/#contact", label: "Contact" },
@@ -85,7 +92,7 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-        </div>
+        </nav>
       )}
 
       <style>{`

@@ -27,33 +27,41 @@ export default function ContactForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="contact-form">
+      <form onSubmit={handleSubmit} className="contact-form" noValidate aria-label="Contact form">
         <div className="cf-field">
-          <label className="cf-label">Name</label>
+          <label htmlFor="cf-name" className="cf-label">Name</label>
           <input
+            id="cf-name"
             className="cf-input"
             name="name"
+            type="text"
             value={form.name}
             onChange={handleChange}
             placeholder="Your name"
+            autoComplete="name"
             required
+            aria-required="true"
           />
         </div>
         <div className="cf-field">
-          <label className="cf-label">Email</label>
+          <label htmlFor="cf-email" className="cf-label">Email</label>
           <input
+            id="cf-email"
             className="cf-input"
             type="email"
             name="email"
             value={form.email}
             onChange={handleChange}
             placeholder="Your email address"
+            autoComplete="email"
             required
+            aria-required="true"
           />
         </div>
         <div className="cf-field">
-          <label className="cf-label">Message</label>
+          <label htmlFor="cf-message" className="cf-label">Message</label>
           <textarea
+            id="cf-message"
             className="cf-input"
             name="message"
             value={form.message}
@@ -61,6 +69,7 @@ export default function ContactForm() {
             placeholder="Your message"
             rows={5}
             required
+            aria-required="true"
           />
         </div>
         <button type="submit" className="cf-submit">

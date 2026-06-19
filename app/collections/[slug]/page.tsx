@@ -57,7 +57,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
     <div style={{ background: "transparent" }}>
 
       {/* ══ HERO ══ */}
-      <section style={{
+      <section aria-label={`${config.title} collection`} style={{
         background: "transparent",
         padding: "120px 24px 72px",
         position: "relative",
@@ -92,7 +92,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ OVERVIEW ══ */}
-      <section style={{ padding: "80px 24px" }}>
+      <section aria-label="Overview and historical context" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 64 }} className="overview-grid">
           <div>
             <ScrollReveal>
@@ -101,7 +101,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             {overview && (
               <div
                 className="prose-archive"
-                style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "#FFFFFF" }}
+                style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.8, color: "rgba(255,255,255,0.82)" }}
                 dangerouslySetInnerHTML={{ __html: mdToHtml(overview.content) }}
               />
             )}
@@ -145,15 +145,22 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                     Language
                   </p>
                   {["English", "Khana", "Igbo", "Hausa", "Yoruba"].map((lang, i) => (
-                    <button key={lang} disabled={i > 0} style={{
-                      display: "block", width: "100%", textAlign: "left" as const,
-                      fontFamily: "var(--font-ui)", fontSize: 13,
-                      color: i === 0 ? "#E3C87A" : "#FFFFFF",
-                      background: "none", border: "none", padding: "4px 0",
-                      cursor: i === 0 ? "default" : "not-allowed",
-                      fontWeight: i === 0 ? 600 : 400,
-                    }}>
-                      {lang}{i > 0 && <span style={{ fontSize: 10, color: "#5A5248", marginLeft: 8 }}>— coming soon</span>}
+                    <button
+                      key={lang}
+                      disabled={i > 0}
+                      aria-disabled={i > 0 ? "true" : undefined}
+                      aria-pressed={i === 0 ? "true" : undefined}
+                      aria-label={i > 0 ? `${lang} — coming soon` : `${lang} (current)`}
+                      style={{
+                        display: "block", width: "100%", textAlign: "left" as const,
+                        fontFamily: "var(--font-ui)", fontSize: 13,
+                        color: i === 0 ? "#E3C87A" : "rgba(255,255,255,0.45)",
+                        background: "none", border: "none", padding: "4px 0",
+                        cursor: i === 0 ? "default" : "not-allowed",
+                        fontWeight: i === 0 ? 600 : 400,
+                      }}
+                    >
+                      {lang}{i > 0 && <span aria-hidden="true" style={{ fontSize: 10, color: "rgba(255,255,255,0.25)", marginLeft: 8 }}>— coming soon</span>}
                     </button>
                   ))}
                 </div>
@@ -164,14 +171,14 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ IMMERSIVE COURTROOM ══ */}
-      <section style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
+      <section aria-label="Immersive tribunal experience" style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— The Tribunal Room</span>
             <h2 style={SECTION_HEADING}>Immersive Courtroom Experience</h2>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: 17, lineHeight: 1.75, color: "#FFFFFF", maxWidth: 600, margin: "0 0 40px",
+              fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", maxWidth: 600, margin: "0 0 40px",
             }}>
               Choose a position in the room. When the full experience is ready, both the visual rendering and the spatial audio will shift simultaneously to reflect your position — giving the physical sensation of moving through the tribunal space.
             </p>
@@ -181,7 +188,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ PRIMARY DOCUMENTS ══ */}
-      <section style={{ padding: "80px 24px" }}>
+      <section aria-label="Primary documents" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Primary Documents</span>
@@ -238,7 +245,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                     className={doc.type === "photograph" ? "doc-reveal" : ""}
                     style={{
                       fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.82,
-                      color: "#FFFFFF",
+                      color: "rgba(255,255,255,0.82)",
                       whiteSpace: "pre-wrap",
                       fontStyle: doc.type === "poem" ? "italic" : "normal",
                     }}
@@ -253,7 +260,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ TIMELINE ══ */}
-      <section style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
+      <section aria-label="Timeline of key events" style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Timeline</span>
@@ -270,7 +277,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       </section>
 
       {/* ══ TEACHING RESOURCES ══ */}
-      <section style={{ padding: "80px 24px" }}>
+      <section aria-label="Teaching resources" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={SECTION_LABEL}>— Teaching Resources</span>
@@ -282,11 +289,11 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           }}>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 17,
-              color: "#FFFFFF", margin: "0 0 20px",
+              color: "rgba(255,255,255,0.82)", margin: "0 0 20px",
             }}>
               [PLACEHOLDER] Teaching resources for this collection are in preparation. This section will include:
             </p>
-            <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#FFFFFF", lineHeight: 2, margin: 0 }}>
+            <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "rgba(255,255,255,0.82)", lineHeight: 2, margin: 0 }}>
               <li>Curriculum-aligned discussion guides for secondary and university-level courses</li>
               <li>Downloadable timeline posters</li>
               <li>Annotated primary source packets</li>
