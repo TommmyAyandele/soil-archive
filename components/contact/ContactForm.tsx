@@ -18,7 +18,7 @@ export default function ContactForm() {
     return (
       <div style={{ padding: "48px 0" }}>
         <p style={{ fontFamily: "var(--font-heading)", fontSize: 28, color: "#FFFFFF", margin: "0 0 12px" }}>Received.</p>
-        <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 17, color: "rgba(255,255,255,0.7)", margin: 0 }}>
+        <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 17, color: "rgba(255,255,255,0.65)", margin: 0 }}>
           We will be in touch. Thank you for reaching out.
         </p>
       </div>
@@ -26,32 +26,111 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 560 }}>
-      <fieldset className="form-field">
-        <legend>Name</legend>
-        <input name="name" value={form.name} onChange={handleChange} placeholder="Your name" required />
-      </fieldset>
-      <fieldset className="form-field">
-        <legend>Email</legend>
-        <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your email address" required />
-      </fieldset>
-      <fieldset className="form-field">
-        <legend>Message</legend>
-        <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message" rows={5} style={{ resize: "vertical" }} required />
-      </fieldset>
-      <button
-        type="submit"
-        style={{
-          fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16,
-          color: "#FFFFFF", background: "#8B4513",
-          border: "none", borderRadius: 2, padding: "14px 0",
-          width: "100%", cursor: "pointer", transition: "background 0.2s", marginTop: 4,
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.background = "#6B3410")}
-        onMouseLeave={(e) => (e.currentTarget.style.background = "#8B4513")}
-      >
-        Send Message
-      </button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="cf-field">
+          <label className="cf-label">Name</label>
+          <input
+            className="cf-input"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="Your name"
+            required
+          />
+        </div>
+        <div className="cf-field">
+          <label className="cf-label">Email</label>
+          <input
+            className="cf-input"
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="Your email address"
+            required
+          />
+        </div>
+        <div className="cf-field">
+          <label className="cf-label">Message</label>
+          <textarea
+            className="cf-input"
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+            placeholder="Your message"
+            rows={5}
+            required
+          />
+        </div>
+        <button type="submit" className="cf-submit">
+          Send Message
+        </button>
+      </form>
+
+      <style>{`
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          max-width: 560px;
+          width: 100%;
+        }
+        .cf-field {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .cf-label {
+          font-family: var(--font-ui);
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.45);
+        }
+        .cf-input {
+          width: 100%;
+          background: rgba(12,10,8,0.82);
+          border: 1px solid rgba(201,168,76,0.28);
+          border-radius: 4px;
+          padding: 14px 16px;
+          font-family: var(--font-body);
+          font-size: 16px;
+          color: #FFFFFF;
+          outline: none;
+          transition: border-color 0.18s;
+          box-sizing: border-box;
+          resize: vertical;
+        }
+        .cf-input::placeholder {
+          color: rgba(255,255,255,0.22);
+        }
+        .cf-input:focus {
+          border-color: #C9A84C;
+        }
+        .cf-submit {
+          font-family: var(--font-body);
+          font-weight: 600;
+          font-size: 16px;
+          color: #FFFFFF;
+          background: #8B4513;
+          border: none;
+          border-radius: 4px;
+          padding: 16px;
+          width: 100%;
+          cursor: pointer;
+          transition: background 0.2s;
+          margin-top: 4px;
+          letter-spacing: 0.02em;
+        }
+        .cf-submit:hover { background: #6B3410; }
+        @media (max-width: 480px) {
+          .contact-form { max-width: 100%; }
+          .cf-input { font-size: 16px; padding: 13px 14px; }
+          .cf-submit { padding: 15px; font-size: 15px; }
+        }
+      `}</style>
+    </>
   );
 }

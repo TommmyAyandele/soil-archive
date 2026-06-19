@@ -260,31 +260,75 @@ export default function HomePage() {
         .btn-filled:hover { background: #6B3410; border-color: #6B3410; }
         .archive-card { transition: border-color 0.2s, background 0.2s; }
         .archive-card:hover { border-color: rgba(201,168,76,0.32) !important; background: rgba(20,16,12,0.72) !important; }
-        fieldset.form-field { border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 2px 14px 14px; background: rgba(255,255,255,0.04); margin: 0; transition: border-color 0.18s; }
-        fieldset.form-field:focus-within { border-color: #C17D11; }
-        fieldset.form-field legend { font-family: var(--font-ui); font-size: 11px; color: rgba(255,255,255,0.5); padding: 0 4px; margin-left: -4px; }
-        fieldset.form-field input, fieldset.form-field textarea { width: 100%; border: none; outline: none; font-family: var(--font-body); font-size: 16px; color: #FFFFFF; background: transparent; padding: 4px 0; resize: none; }
-        fieldset.form-field input::placeholder, fieldset.form-field textarea::placeholder { color: rgba(255,255,255,0.3); }
-        @media (max-width: 768px) {
-          #archive { padding-left: 20px !important; padding-right: 20px !important; }
-          #archive h2 { font-size: 32px !important; letter-spacing: -0.02em !important; }
-          #about { padding-left: 20px !important; padding-right: 20px !important; }
-          #contact { padding-left: 20px !important; padding-right: 20px !important; }
-          footer { padding-left: 20px !important; padding-right: 20px !important; }
+
+        /* ── Tablet (≤900px) ── */
+        @media (max-width: 900px) {
+          #archive, #about, #contact {
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+          }
+          footer { padding-left: 40px !important; padding-right: 40px !important; }
         }
+
+        /* ── Mobile (≤768px) ── */
+        @media (max-width: 768px) {
+          .hero-section {
+            padding: 100px 20px 48px !important;
+            justify-content: center !important;
+            height: 100svh !important;
+          }
+          .hero-content { padding-top: 0 !important; gap: 20px !important; }
+          .hero-h1 { font-size: 44px !important; letter-spacing: -0.04em !important; }
+          .scroll-indicator { display: none !important; }
+
+          #archive {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 64px !important;
+            padding-bottom: 64px !important;
+          }
+          #archive h2 { font-size: 30px !important; letter-spacing: -0.02em !important; }
+          #archive > p { font-size: 16px !important; margin-bottom: 36px !important; }
+
+          #about {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 64px !important;
+            padding-bottom: 64px !important;
+          }
+          #about h2 { font-size: 34px !important; margin-bottom: 28px !important; }
+          #about p { font-size: 16px !important; }
+
+          #contact {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 64px !important;
+            padding-bottom: 64px !important;
+          }
+          #contact h2 { font-size: 30px !important; }
+          #contact > div > p { font-size: 16px !important; margin-bottom: 32px !important; }
+
+          footer {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
+            justify-content: center !important;
+            text-align: center !important;
+          }
+        }
+
+        /* ── Small mobile (≤480px) ── */
+        @media (max-width: 480px) {
+          .hero-h1 { font-size: 36px !important; }
+          .hero-content { gap: 16px !important; }
+          .btn-outline, .btn-filled { font-size: 14px !important; padding: 0 16px !important; height: 44px !important; }
+        }
+
+        /* ── Grid stacking ── */
         @media (max-width: 680px) {
           .archive-cards { grid-template-columns: 1fr !important; }
           .about-cols { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 768px) {
-          .hero-section { padding: 100px 20px 48px !important; justify-content: center !important; height: 100svh !important; }
-          .hero-content { padding-top: 0 !important; }
-          .hero-h1 { font-size: 44px !important; }
-          .scroll-indicator { display: none !important; }
-        }
-        @media (max-width: 480px) {
-          .hero-h1 { font-size: 38px !important; letter-spacing: -0.04em !important; }
-          .hero-content { gap: 16px !important; }
         }
       `}</style>
     </>
