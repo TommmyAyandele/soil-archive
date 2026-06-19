@@ -17,7 +17,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div style={{ padding: "48px 0" }}>
-        <p style={{ fontFamily: "var(--font-heading)", fontSize: 28, color: "#FFFFFF", margin: "0 0 12px" }}>Received.</p>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: 28, color: "#FFFFFF", margin: "0 0 12px" }}>Received.</p>
         <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 17, color: "rgba(255,255,255,0.65)", margin: 0 }}>
           We will be in touch. Thank you for reaching out.
         </p>
@@ -91,7 +91,7 @@ export default function ContactForm() {
           gap: 8px;
         }
         .cf-label {
-          font-family: var(--font-ui);
+          font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 700;
           letter-spacing: 0.16em;

@@ -23,7 +23,7 @@ export default function Navbar() {
     }}>
       {/* Logo */}
       <Link href="/" aria-label="The Soil Archive — home" style={{ textDecoration: "none", maxWidth: 230, flexShrink: 1 }}>
-        <div className="nav-logo-title" style={{ fontFamily: "var(--font-logo)", fontWeight: 700, fontSize: 32, color: "#FFFFFF", lineHeight: 1.15 }}>
+        <div className="nav-logo-title" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 32, color: "#FFFFFF", lineHeight: 1.15 }}>
           The Soil Archive
         </div>
         <div className="nav-logo-sub" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16, color: "rgba(255,255,255,0.7)", lineHeight: 1.4, marginTop: 2 }}>

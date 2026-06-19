@@ -7,7 +7,7 @@ export default function Footer() {
       style={{
         background: "#1C1C1A",
         color: "#E3C87A",
-        fontFamily: "var(--font-ui)",
+        fontFamily: "var(--font-mono)",
         padding: "56px 24px 36px",
         marginTop: "auto",
       }}
@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <p
               style={{
-                fontFamily: "var(--font-heading)",
+                fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 fontSize: 22,
                 color: "#F5E6C8",

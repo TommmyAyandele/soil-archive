@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const SECTION_LABEL: React.CSSProperties = {
-  fontFamily: "var(--font-ui)",
+  fontFamily: "var(--font-mono)",
   fontSize: 11,
   fontWeight: 600,
   letterSpacing: "0.16em",
@@ -36,7 +36,7 @@ const SECTION_LABEL: React.CSSProperties = {
 };
 
 const SECTION_HEADING: React.CSSProperties = {
-  fontFamily: "var(--font-heading)",
+  fontFamily: "var(--font-display)",
   fontWeight: 700,
   fontSize: "clamp(24px, 3.5vw, 40px)",
   lineHeight: 1.15,
@@ -92,10 +92,10 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 background: "#1C1C1A", borderRadius: 8, padding: "28px 24px",
                 position: "sticky", top: 80,
               }}>
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", margin: "0 0 16px" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", margin: "0 0 16px" }}>
                   The Nine
                 </p>
-                <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, color: "#FFFFFF", margin: "0 0 18px", fontStyle: "italic" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#FFFFFF", margin: "0 0 18px", fontStyle: "italic" }}>
                   Executed 10 November 1995
                 </p>
                 {[
@@ -111,7 +111,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 ].map((name) => (
                   <div key={name} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
                     <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#C9A84C", flexShrink: 0 }}/>
-                    <span style={{ fontFamily: "var(--font-heading)", fontSize: 15, fontWeight: 600, color: "#E3C87A", lineHeight: 1.3 }}>
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 600, color: "#E3C87A", lineHeight: 1.3 }}>
                       {name}
                     </span>
                   </div>
@@ -119,7 +119,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
 
                 {/* Language selector */}
                 <div style={{ marginTop: 28, paddingTop: 20, borderTop: "1px solid rgba(201,168,76,0.12)" }}>
-                  <p style={{ fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#FFFFFF", margin: "0 0 12px" }}>
+                  <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#FFFFFF", margin: "0 0 12px" }}>
                     Language
                   </p>
                   {["English", "Khana", "Igbo", "Hausa", "Yoruba"].map((lang, i) => (
@@ -131,7 +131,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                       aria-label={i > 0 ? `${lang} — coming soon` : `${lang} (current)`}
                       style={{
                         display: "block", width: "100%", textAlign: "left" as const,
-                        fontFamily: "var(--font-ui)", fontSize: 13,
+                        fontFamily: "var(--font-mono)", fontSize: 13,
                         color: i === 0 ? "#E3C87A" : "rgba(255,255,255,0.45)",
                         background: "none", border: "none", padding: "4px 0",
                         cursor: i === 0 ? "default" : "not-allowed",
@@ -170,7 +170,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                   {doc.placeholder && (
                     <span style={{
                       position: "absolute", top: 16, right: 16,
-                      fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 600,
+                      fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600,
                       letterSpacing: "0.1em", textTransform: "uppercase" as const,
                       color: "#C9A84C", background: "rgba(201,168,76,0.1)",
                       border: "1px solid rgba(201,168,76,0.25)", borderRadius: 3, padding: "3px 8px",
@@ -181,7 +181,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
 
                   <div style={{ display: "flex", gap: 16, marginBottom: 16, flexWrap: "wrap" as const }}>
                     <span style={{
-                      fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700,
+                      fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700,
                       letterSpacing: "0.14em", textTransform: "uppercase" as const,
                       color: "#C9A84C", background: "rgba(201,168,76,0.12)",
                       border: "1px solid rgba(201,168,76,0.25)", borderRadius: 3, padding: "3px 8px",
@@ -189,15 +189,15 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                       {doc.type}
                     </span>
                     {doc.date && (
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>{doc.date}</span>
+                      <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>{doc.date}</span>
                     )}
                     {doc.author && (
-                      <span style={{ fontFamily: "var(--font-ui)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>— {doc.author}</span>
+                      <span style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "rgba(255,255,255,0.6)" }}>— {doc.author}</span>
                     )}
                   </div>
 
                   <h3 style={{
-                    fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 20,
+                    fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 20,
                     color: "#FFFFFF", margin: "0 0 18px",
                   }}>
                     {doc.title}
@@ -275,8 +275,8 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           .doc-article { padding: 20px 16px !important; }
           .teaching-box { padding: 24px 16px !important; }
         }
-        .prose-archive h2 { font-family: var(--font-heading); font-size: 22px; color: #FFFFFF; margin: 40px 0 16px; }
-        .prose-archive h3 { font-family: var(--font-heading); font-size: 18px; color: #FFFFFF; margin: 32px 0 12px; }
+        .prose-archive h2 { font-family: var(--font-display); font-size: 22px; color: #FFFFFF; margin: 40px 0 16px; }
+        .prose-archive h3 { font-family: var(--font-display); font-size: 18px; color: #FFFFFF; margin: 32px 0 12px; }
         .prose-archive p { margin: 0 0 22px; }
         .prose-archive strong { font-weight: 700; color: #FFFFFF; }
         .prose-archive em { font-style: italic; }

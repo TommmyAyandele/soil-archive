@@ -175,7 +175,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           justify-content: center;
         }
         .ic-eyebrow {
-          font-family: var(--font-ui);
+          font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.16em;
@@ -184,7 +184,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           margin: 0;
         }
         .ic-hero-title {
-          font-family: var(--font-heading);
+          font-family: var(--font-display);
           font-weight: 900;
           font-size: clamp(32px, 3.8vw, 56px);
           line-height: 1.05;
@@ -201,7 +201,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           line-height: 1.55;
         }
         .ic-hero-meta {
-          font-family: var(--font-ui);
+          font-family: var(--font-mono);
           font-size: 12px;
           letter-spacing: 0.05em;
           color: rgba(255,255,255,0.4);
@@ -220,7 +220,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           margin: 0;
         }
         .ic-tags-line {
-          font-family: var(--font-ui);
+          font-family: var(--font-mono);
           font-size: 11px;
           color: rgba(255,255,255,0.32);
           letter-spacing: 0.03em;
@@ -297,7 +297,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           flex: 1;
         }
         .ic-card-position {
-          font-family: var(--font-ui);
+          font-family: var(--font-mono);
           font-size: 10px;
           font-weight: 600;
           letter-spacing: 0.14em;
@@ -306,7 +306,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           margin: 0;
         }
         .ic-card-label {
-          font-family: var(--font-heading);
+          font-family: var(--font-display);
           font-weight: 700;
           font-size: clamp(16px, 1.5vw, 20px);
           color: #FFFFFF;

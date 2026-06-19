@@ -1,28 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Libre_Baskerville, Lora, Space_Mono } from "next/font/google";
+import { Instrument_Serif, Source_Serif_4, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-logo",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const libreBaskerville = Libre_Baskerville({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const lora = Lora({
+const sourceSerif4 = Source_Serif_4({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -47,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${libreBaskerville.variable} ${lora.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${instrumentSerif.variable} ${sourceSerif4.variable} ${spaceMono.variable}`}>
       <body className="min-h-screen flex flex-col">
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />

@@ -74,7 +74,7 @@ export default function Timeline({ entries }: Props) {
           <div style={{ paddingTop: 4, textAlign: "right", paddingRight: 24 }}>
             <span
               style={{
-                fontFamily: "var(--font-heading)",
+                fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 fontSize: 13,
                 color: "#C17D11",
@@ -114,7 +114,7 @@ export default function Timeline({ entries }: Props) {
           >
             <p
               style={{
-                fontFamily: "var(--font-heading)",
+                fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 fontSize: 16,
                 color: "#1C1C1A",
