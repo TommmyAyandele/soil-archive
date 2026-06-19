@@ -41,7 +41,7 @@ export default function Navbar() {
             Contact
           </Link>
         </div>
-        <Link href="/collections" style={{
+        <Link href="/#archive" style={{
           fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16,
           color: "#F5E6C8", background: "#8B4513",
           padding: "10px 20px", borderRadius: 2,
@@ -75,7 +75,7 @@ export default function Navbar() {
           {[
             { href: "/about", label: "About" },
             { href: "/contact", label: "Contact" },
-            { href: "/collections", label: "View Archive" },
+            { href: "/#archive", label: "View Archive" },
           ].map(({ href, label }) => (
             <Link key={href} href={href} onClick={() => setMenuOpen(false)} style={{
               display: "block", fontFamily: "var(--font-body)", fontWeight: 400,

@@ -38,7 +38,7 @@ export default function Footer() {
               style={{
                 fontSize: 13,
                 lineHeight: 1.7,
-                color: "#4A3520",
+                color: "rgba(255,255,255,0.6)",
                 margin: "0 0 20px",
                 maxWidth: 240,
               }}
@@ -63,7 +63,7 @@ export default function Footer() {
             <Link href="/collections/ogoni-nine" style={{ display: "block", fontSize: 14, color: "#C8B89A", marginBottom: 10, textDecoration: "none" }}>
               001 — The Ogoni Nine
             </Link>
-            <p style={{ fontSize: 13, color: "#5A5248", fontStyle: "italic", margin: 0 }}>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontStyle: "italic", margin: 0 }}>
               More collections forthcoming
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function Footer() {
             </p>
             {[
               { href: "/", label: "Home" },
-              { href: "/collections", label: "All Collections" },
+              { href: "/#archive", label: "The Archive" },
               { href: "/about", label: "About the Archive" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
@@ -90,7 +90,7 @@ export default function Footer() {
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C9A84C", margin: "0 0 16px" }}>
               A Note on the Archive
             </p>
-            <p style={{ fontSize: 13, lineHeight: 1.75, color: "#4A3520", margin: 0 }}>
+            <p style={{ fontSize: 13, lineHeight: 1.75, color: "rgba(255,255,255,0.6)", margin: 0 }}>
               This archive stands with the communities whose stories it holds. We are not neutral on injustice. Content is presented with care for accuracy and dignity.
             </p>
           </div>
@@ -107,10 +107,10 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <p style={{ fontSize: 12, color: "#5A5248", margin: 0 }}>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", margin: 0 }}>
             © {new Date().getFullYear()} The Soil Archive. Public archive. Not for commercial use.
           </p>
-          <p style={{ fontSize: 12, color: "#5A5248", margin: 0, fontStyle: "italic" }}>
+          <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", margin: 0, fontStyle: "italic" }}>
             The earth remembers what states try to erase.
           </p>
         </div>
