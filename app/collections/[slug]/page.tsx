@@ -190,7 +190,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
             {documents.map((doc, i) => (
               <ScrollReveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-                <article style={{
+                <article className="doc-article" style={{
                   background: doc.placeholder ? "rgba(255,255,255,0.4)" : "#FDFAF3",
                   border: `1px solid ${doc.placeholder ? "rgba(201,168,76,0.18)" : "rgba(201,168,76,0.35)"}`,
                   borderRadius: 8,
@@ -276,7 +276,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
             <span style={SECTION_LABEL}>— Teaching Resources</span>
             <h2 style={SECTION_HEADING}>For Educators &amp; Students</h2>
           </ScrollReveal>
-          <div style={{
+          <div className="teaching-box" style={{
             background: "rgba(201,168,76,0.08)", border: "1px dashed rgba(201,168,76,0.3)",
             borderRadius: 8, padding: "40px 36px",
           }}>
@@ -301,6 +301,10 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         .overview-grid { }
         @media (max-width: 860px) {
           .overview-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .doc-article { padding: 20px 16px !important; }
+          .teaching-box { padding: 24px 16px !important; }
         }
         .prose-archive h2 { font-family: var(--font-heading); font-size: 22px; color: #1C1C1A; margin: 40px 0 16px; }
         .prose-archive h3 { font-family: var(--font-heading); font-size: 18px; color: #1C1C1A; margin: 32px 0 12px; }

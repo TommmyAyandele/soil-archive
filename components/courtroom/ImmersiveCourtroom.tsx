@@ -138,12 +138,14 @@ export default function ImmersiveCourtroom() {
     >
       {/* Header */}
       <div
+        className="courtroom-header"
         style={{
           background: "#1C1C1A",
           padding: "18px 28px",
           display: "flex",
           alignItems: "center",
           gap: 16,
+          flexWrap: "wrap",
         }}
       >
         <div>
@@ -450,6 +452,7 @@ export default function ImmersiveCourtroom() {
       <style>{`
         @media (max-width: 680px) {
           .courtroom-grid { grid-template-columns: 1fr !important; }
+          .courtroom-header { padding: 14px 16px !important; }
         }
       `}</style>
     </div>

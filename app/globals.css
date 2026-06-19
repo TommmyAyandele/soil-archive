@@ -180,3 +180,10 @@ a:hover { color: #8B3A2F; }
     opacity: 1 !important;
   }
 }
+
+/* ── Mobile: background-attachment: fixed breaks on iOS Safari ── */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+}

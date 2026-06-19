@@ -5,7 +5,7 @@ export default function HomePage() {
     <>
       {/* ══ HERO ══ */}
       {/* Full viewport. Navbar is fixed at 100px. Content starts at y:188 (88px below navbar). */}
-      <section style={{
+      <section className="hero-section" style={{
         height: "100vh",
         display: "flex",
         flexDirection: "column",
@@ -15,7 +15,7 @@ export default function HomePage() {
       }}>
 
         {/* Content block — starts 88px below navbar (100 + 88 = 188px from top, per Figma) */}
-        <div style={{
+        <div className="hero-content" style={{
           paddingTop: 188,
           display: "flex",
           flexDirection: "column",
@@ -114,6 +114,13 @@ export default function HomePage() {
           transition: background 0.2s;
         }
         .btn-filled:hover { background: #6B3410; border-color: #6B3410; color: #F5E6C8; }
+        @media (max-width: 768px) {
+          .hero-section { padding-left: 20px !important; padding-right: 20px !important; }
+          .hero-content { padding-top: 130px !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-content { padding-top: 116px !important; gap: 16px !important; }
+        }
       `}</style>
     </>
   );

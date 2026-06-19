@@ -22,11 +22,11 @@ export default function Navbar() {
       padding: "0 clamp(24px, 6vw, 120px)",
     }}>
       {/* Logo */}
-      <Link href="/" style={{ textDecoration: "none", width: 230, flexShrink: 0 }}>
-        <div style={{ fontFamily: "var(--font-logo)", fontWeight: 700, fontSize: 32, color: "#FFFFFF", lineHeight: 1.15 }}>
+      <Link href="/" style={{ textDecoration: "none", maxWidth: 230, flexShrink: 1 }}>
+        <div className="nav-logo-title" style={{ fontFamily: "var(--font-logo)", fontWeight: 700, fontSize: 32, color: "#FFFFFF", lineHeight: 1.15 }}>
           The Soil Archive
         </div>
-        <div style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16, color: "rgba(255,255,255,0.7)", lineHeight: 1.4, marginTop: 2 }}>
+        <div className="nav-logo-sub" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16, color: "rgba(255,255,255,0.7)", lineHeight: 1.4, marginTop: 2 }}>
           African Voices, Recovered
         </div>
       </Link>
@@ -95,6 +95,10 @@ export default function Navbar() {
         }
         @media (min-width: 681px) {
           .nav-mobile-btn { display: none !important; }
+        }
+        @media (max-width: 400px) {
+          .nav-logo-title { font-size: 26px !important; }
+          .nav-logo-sub { display: none; }
         }
       `}</style>
     </header>

@@ -41,9 +41,10 @@ export default function Timeline({ entries }: Props) {
   }, []);
 
   return (
-    <div ref={containerRef} style={{ position: "relative", paddingLeft: 0 }}>
+    <div ref={containerRef} className="timeline-wrap" style={{ position: "relative", paddingLeft: 0 }}>
       {/* Vertical line */}
       <div
+        className="timeline-line"
         style={{
           position: "absolute",
           left: 80,
@@ -58,7 +59,7 @@ export default function Timeline({ entries }: Props) {
       {entries.map((entry, i) => (
         <div
           key={i}
-          className="ink-entry"
+          className="ink-entry timeline-entry"
           data-delay={String(i * 0.06)}
           style={{
             position: "relative",
@@ -85,6 +86,7 @@ export default function Timeline({ entries }: Props) {
             </span>
             {/* Dot on the line */}
             <div
+              className="timeline-dot"
               style={{
                 position: "absolute",
                 left: 74,
@@ -101,6 +103,7 @@ export default function Timeline({ entries }: Props) {
 
           {/* Content */}
           <div
+            className="timeline-card"
             style={{
               background: "rgba(255,255,255,0.5)",
               border: "1px solid rgba(201,168,76,0.2)",
@@ -135,6 +138,15 @@ export default function Timeline({ entries }: Props) {
           </div>
         </div>
       ))}
+
+      <style>{`
+        @media (max-width: 520px) {
+          .timeline-line { left: 48px !important; }
+          .timeline-entry { grid-template-columns: 48px 1fr !important; gap: 0 12px !important; }
+          .timeline-dot { left: 42px !important; }
+          .timeline-card { padding: 14px 14px !important; }
+        }
+      `}</style>
     </div>
   );
 }
