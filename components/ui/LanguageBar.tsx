@@ -16,7 +16,7 @@ export default function LanguageBar() {
         padding: "0 clamp(24px, 6vw, 120px)",
         background: "rgba(10,8,6,0.6)",
         backdropFilter: "blur(8px)",
-        borderBottom: "1px solid rgba(201,168,76,0.15)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
     >
       <span style={{
@@ -40,13 +40,13 @@ export default function LanguageBar() {
             aria-disabled={i > 0 ? "true" : undefined}
             aria-label={i > 0 ? `${lang} — translation coming soon` : `${lang} — currently selected`}
             style={{
-              background: i === 0 ? "rgba(201,168,76,0.1)" : "none",
-              border: i === 0 ? "1px solid rgba(201,168,76,0.32)" : "1px solid transparent",
+              background: "none",
+              border: i === 0 ? "1px solid rgba(255,255,255,0.25)" : "1px solid transparent",
               borderRadius: 2,
               padding: "4px 12px",
               fontFamily: "var(--font-mono)",
               fontSize: 12,
-              color: i === 0 ? "#C9A84C" : "rgba(255,255,255,0.25)",
+              color: i === 0 ? "#FFFFFF" : "rgba(255,255,255,0.25)",
               cursor: i === 0 ? "default" : "not-allowed",
               fontWeight: i === 0 ? 600 : 400,
               transition: "color 0.15s",
