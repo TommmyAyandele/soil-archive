@@ -183,7 +183,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           font-weight: 600;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.5);
+          color: #C17D11;
           margin: 0;
         }
         .ic-hero-title {

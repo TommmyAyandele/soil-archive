@@ -77,7 +77,7 @@ export default function Timeline({ entries }: Props) {
                 fontFamily: "var(--font-display)",
                 fontWeight: 400,
                 fontSize: 13,
-                color: "rgba(255,255,255,0.55)",
+                color: "#C17D11",
                 display: "block",
                 letterSpacing: "0.04em",
               }}

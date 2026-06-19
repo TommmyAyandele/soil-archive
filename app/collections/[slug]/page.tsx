@@ -31,7 +31,7 @@ const SECTION_LABEL: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(255,255,255,0.5)",
+  color: "#C17D11",
   display: "block",
   marginBottom: 20,
 };
@@ -96,7 +96,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                 background: "#1C1C1A", borderRadius: 8, padding: "28px 24px",
                 position: "sticky", top: 80,
               }}>
-                <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#F5E6C8", background: "#8B4513", display: "inline-block", padding: "3px 10px", borderRadius: 2, margin: "0 0 16px" }}>
                   The Nine
                 </p>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#FFFFFF", margin: "0 0 18px", fontStyle: "italic" }}>

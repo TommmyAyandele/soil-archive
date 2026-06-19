@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Collections */}
           <div>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C17D11", margin: "0 0 16px" }}>
               Collections
             </p>
             <Link href="/collections/ogoni-nine" style={{ display: "block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Navigate */}
           <div>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C17D11", margin: "0 0 16px" }}>
               Navigate
             </p>
             {[
@@ -87,7 +87,7 @@ export default function Footer() {
 
           {/* Mission note */}
           <div>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 16px" }}>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C17D11", margin: "0 0 16px" }}>
               A Note on the Archive
             </p>
             <p style={{ fontSize: 13, lineHeight: 1.75, color: "rgba(255,255,255,0.6)", margin: 0 }}>

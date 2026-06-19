@@ -92,7 +92,7 @@ export default function HomePage() {
         <span style={{
           fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600,
           letterSpacing: "0.16em", textTransform: "uppercase" as const,
-          color: "rgba(255,255,255,0.5)", display: "block", marginBottom: 28,
+          color: "#C17D11", display: "block", marginBottom: 28,
         }}>
           The Archive
         </span>
@@ -169,7 +169,7 @@ export default function HomePage() {
         scrollMarginTop: 100,
       }}>
         <div style={{ maxWidth: 860 }}>
-          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", marginBottom: 20 }}>
+          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
             About the Archive
           </span>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 1.05, color: "#FFFFFF", margin: "0 0 40px" }}>
@@ -208,7 +208,7 @@ export default function HomePage() {
         scrollMarginTop: 100,
       }}>
         <div style={{ maxWidth: 860 }}>
-          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.5)", marginBottom: 20 }}>
+          <span style={{ display: "block", fontFamily: "var(--font-mono)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
             Get in Touch
           </span>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(36px, 4.5vw, 60px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 16px" }}>
