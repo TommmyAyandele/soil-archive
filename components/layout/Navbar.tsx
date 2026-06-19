@@ -34,10 +34,10 @@ export default function Navbar() {
       {/* Desktop nav */}
       <nav style={{ display: "flex", alignItems: "center", gap: 64 }} className="nav-desktop">
         <div style={{ display: "flex", alignItems: "center", gap: 64 }}>
-          <Link href="/about" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
+          <Link href="/#about" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
             About
           </Link>
-          <Link href="/contact" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
+          <Link href="/#contact" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
             Contact
           </Link>
         </div>
@@ -73,8 +73,8 @@ export default function Navbar() {
           padding: "24px clamp(24px, 6vw, 120px) 32px",
         }}>
           {[
-            { href: "/about", label: "About" },
-            { href: "/contact", label: "Contact" },
+            { href: "/#about", label: "About" },
+            { href: "/#contact", label: "Contact" },
             { href: "/#archive", label: "View Archive" },
           ].map(({ href, label }) => (
             <Link key={href} href={href} onClick={() => setMenuOpen(false)} style={{
