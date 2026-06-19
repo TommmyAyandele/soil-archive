@@ -22,7 +22,7 @@ export default function HomePage() {
           gap: 24,
           maxWidth: 989,
         }}>
-          <h1 style={{
+          <h1 className="hero-h1" style={{
             fontFamily: "var(--font-heading)",
             fontWeight: 700,
             fontSize: "clamp(52px, 6.25vw, 90px)",
@@ -64,8 +64,8 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Scroll indicator — pinned to bottom centre */}
-        <div style={{
+        {/* Scroll indicator — pinned to bottom centre, hidden on mobile */}
+        <div className="scroll-indicator" style={{
           marginTop: "auto",
           paddingBottom: 48,
           display: "flex",
@@ -117,9 +117,12 @@ export default function HomePage() {
         @media (max-width: 768px) {
           .hero-section { padding-left: 20px !important; padding-right: 20px !important; }
           .hero-content { padding-top: 130px !important; }
+          .hero-h1 { font-size: 44px !important; }
+          .scroll-indicator { display: none !important; }
         }
         @media (max-width: 480px) {
           .hero-content { padding-top: 116px !important; gap: 16px !important; }
+          .hero-h1 { font-size: 38px !important; letter-spacing: -0.04em !important; }
         }
       `}</style>
     </>
