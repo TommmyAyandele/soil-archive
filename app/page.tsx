@@ -273,9 +273,9 @@ export default function HomePage() {
         /* ── Mobile (≤768px) ── */
         @media (max-width: 768px) {
           .hero-section {
-            height: auto !important;
-            padding: 148px 24px 80px !important;
-            justify-content: flex-start !important;
+            height: 100svh !important;
+            padding: 100px 24px 0 !important;
+            justify-content: center !important;
           }
           .hero-content {
             padding-top: 0 !important;
