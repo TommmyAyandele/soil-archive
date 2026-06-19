@@ -157,8 +157,7 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           border: none;
           border-radius: 0;
           border-bottom: 1px solid rgba(201,168,76,0.13);
-          min-height: 100svh;
-          padding-top: 100px;
+          min-height: calc(100svh - 152px);
         }
 
         /* ─── Left panel ─── */

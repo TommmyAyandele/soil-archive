@@ -8,6 +8,7 @@ import {
 } from "@/lib/collections";
 import Timeline from "@/components/timeline/Timeline";
 import ImmersiveCourtroom from "@/components/courtroom/ImmersiveCourtroom";
+import LanguageBar from "@/components/ui/LanguageBar";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export async function generateStaticParams() {
@@ -66,6 +67,9 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
   return (
     <div style={{ background: "transparent" }}>
 
+      {/* ══ LANGUAGE BAR ══ */}
+      <LanguageBar />
+
       {/* ══ HERO + PERSPECTIVES ══ */}
       <ImmersiveCourtroom heroConfig={heroConfig} />
 
@@ -117,31 +121,6 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
                   </div>
                 ))}
 
-                {/* Language selector */}
-                <div style={{ marginTop: 28, paddingTop: 20, borderTop: "1px solid rgba(201,168,76,0.12)" }}>
-                  <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "#FFFFFF", margin: "0 0 12px" }}>
-                    Language
-                  </p>
-                  {["English", "Khana", "Igbo", "Hausa", "Yoruba"].map((lang, i) => (
-                    <button
-                      key={lang}
-                      disabled={i > 0}
-                      aria-disabled={i > 0 ? "true" : undefined}
-                      aria-pressed={i === 0 ? "true" : undefined}
-                      aria-label={i > 0 ? `${lang} — coming soon` : `${lang} (current)`}
-                      style={{
-                        display: "block", width: "100%", textAlign: "left" as const,
-                        fontFamily: "var(--font-mono)", fontSize: 13,
-                        color: i === 0 ? "#E3C87A" : "rgba(255,255,255,0.45)",
-                        background: "none", border: "none", padding: "4px 0",
-                        cursor: i === 0 ? "default" : "not-allowed",
-                        fontWeight: i === 0 ? 600 : 400,
-                      }}
-                    >
-                      {lang}{i > 0 && <span aria-hidden="true" style={{ fontSize: 10, color: "rgba(255,255,255,0.25)", marginLeft: 8 }}>— coming soon</span>}
-                    </button>
-                  ))}
-                </div>
               </div>
             </ScrollReveal>
           </aside>
