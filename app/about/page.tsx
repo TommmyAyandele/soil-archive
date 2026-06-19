@@ -13,12 +13,12 @@ export default function AboutPage() {
             </span>
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 60px)", lineHeight: 1.1, color: "#1C1C1A", margin: "0 0 28px" }}>
+            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 60px)", lineHeight: 1.1, color: "#F5E6C8", margin: "0 0 28px" }}>
               What is the Soil Archive?
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "#1A1410", margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "rgba(245,230,200,0.85)", margin: 0 }}>
               The Soil Archive is a public digital archive platform designed to house multiple collections of suppressed African voices, histories, and justice stories. It is built to grow — each new collection added without rebuilding anything, every voice recovered and held with care.
             </p>
           </ScrollReveal>
@@ -47,11 +47,11 @@ export default function AboutPage() {
           ].map((section, i) => (
             <ScrollReveal key={section.heading} delay={(i % 3) as 0 | 1 | 2}>
               <div style={{ marginBottom: 56 }}>
-                <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 28, color: "#1C1C1A", margin: "0 0 18px" }}>
+                <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 28, color: "#F5E6C8", margin: "0 0 18px" }}>
                   {section.heading}
                 </h2>
                 {section.body.split("\n\n").map((para, j) => (
-                  <p key={j} style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.8, color: "#2A2A28", margin: "0 0 18px" }}>
+                  <p key={j} style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.8, color: "rgba(245,230,200,0.85)", margin: "0 0 18px" }}>
                     {para}
                   </p>
                 ))}
