@@ -7,6 +7,7 @@ export interface CollectionConfig {
   number: string;
   title: string;
   subtitle: string;
+  description?: string;
   region: string;
   year: string;
   yearRange: string;
