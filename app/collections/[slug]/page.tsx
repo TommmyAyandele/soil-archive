@@ -53,43 +53,21 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
   const timeline = getCollectionTimeline(slug);
   const documents = getCollectionDocuments(slug);
 
+  const heroConfig = {
+    number: config.number,
+    title: config.title,
+    subtitle: config.subtitle,
+    region: config.region,
+    yearRange: config.yearRange,
+    description: config.description ?? config.subtitle,
+    tags: config.tags,
+  };
+
   return (
     <div style={{ background: "transparent" }}>
 
-      {/* ══ HERO ══ */}
-      <section aria-label={`${config.title} collection`} style={{
-        background: "transparent",
-        padding: "120px 24px 72px",
-        position: "relative",
-        overflow: "hidden",
-      }}>
-        {/* Grain texture */}
-        <div aria-hidden style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E")`,
-          opacity: 0.5,
-        }}/>
-        <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative" }}>
-          <p style={{ fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#C9A84C", margin: "0 0 20px" }}>
-            Collection {config.number}
-          </p>
-          <h1 style={{
-            fontFamily: "var(--font-heading)", fontWeight: 900,
-            fontSize: "clamp(40px, 6vw, 76px)", lineHeight: 1.05,
-            color: "#FFFFFF", margin: "0 0 16px",
-          }}>
-            {config.title}
-          </h1>
-          <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 20, color: "#FFFFFF", margin: "0 0 32px", maxWidth: 580 }}>
-            {config.subtitle}
-          </p>
-          <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#FFFFFF" }}>{config.region}</span>
-            <span style={{ color: "rgba(201,168,76,0.4)" }}>·</span>
-            <span style={{ fontFamily: "var(--font-ui)", fontSize: 13, color: "#FFFFFF" }}>{config.yearRange}</span>
-          </div>
-        </div>
-      </section>
+      {/* ══ HERO + PERSPECTIVES ══ */}
+      <ImmersiveCourtroom heroConfig={heroConfig} />
 
       {/* ══ OVERVIEW ══ */}
       <section aria-label="Overview and historical context" style={{ padding: "80px 24px" }}>
@@ -170,22 +148,6 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         </div>
       </section>
 
-      {/* ══ IMMERSIVE COURTROOM ══ */}
-      <section aria-label="Immersive tribunal experience" style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <ScrollReveal>
-            <span style={SECTION_LABEL}>— The Tribunal Room</span>
-            <h2 style={SECTION_HEADING}>Immersive Courtroom Experience</h2>
-            <p style={{
-              fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.82)", maxWidth: 600, margin: "0 0 40px",
-            }}>
-              Choose a position in the room. When the full experience is ready, both the visual rendering and the spatial audio will shift simultaneously to reflect your position — giving the physical sensation of moving through the tribunal space.
-            </p>
-          </ScrollReveal>
-          <ImmersiveCourtroom />
-        </div>
-      </section>
 
       {/* ══ PRIMARY DOCUMENTS ══ */}
       <section aria-label="Primary documents" style={{ padding: "80px 24px" }}>

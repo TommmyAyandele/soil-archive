@@ -1,5 +1,19 @@
 "use client";
 
+export interface HeroConfig {
+  number: string;
+  title: string;
+  subtitle: string;
+  region: string;
+  yearRange: string;
+  description: string;
+  tags?: string[];
+}
+
+interface Props {
+  heroConfig?: HeroConfig;
+}
+
 type Perspective = {
   id: string;
   label: string;
@@ -38,34 +52,76 @@ const PERSPECTIVES: Perspective[] = [
   },
 ];
 
-export default function ImmersiveCourtroom() {
+export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
+  const isHero = !!heroConfig;
+
   return (
-    <div className="ic-wrap" role="region" aria-label="Immersive tribunal listening experience">
-      {/* Left: context panel */}
+    <div
+      className={`ic-wrap${isHero ? " ic-hero" : ""}`}
+      role="region"
+      aria-label={
+        isHero
+          ? `${heroConfig!.title} — immersive listening experience`
+          : "Immersive tribunal listening experience"
+      }
+    >
+      {/* ── Left panel ── */}
       <div className="ic-left">
-        <p className="ic-eyebrow" aria-hidden="true">Immersive Experience</p>
-        <h3 className="ic-title">
-          The Tribunal Room<br />
-          Port Harcourt, 1995
-        </h3>
-        <p className="ic-body">
-          Four spatial audio recordings will provide distinct listening experiences
-          of the 1995 Special Military Tribunal proceedings, each reflecting how
-          an individual&apos;s position in the room shaped their acoustic encounter
-          with the exercise of state power.
-        </p>
-        <p className="ic-body">
-          Select a position to hear the tribunal from that seat. Visual rendering
-          and binaural audio will shift simultaneously to reflect the acoustic
-          character of each location.
-        </p>
-        <div className="ic-status" aria-label="Production status: audio in production">
-          <span className="ic-status-dot" aria-hidden="true" />
-          <span className="ic-status-text">Audio in production. Visual rendering forthcoming.</span>
-        </div>
+        {isHero ? (
+          <>
+            <p className="ic-eyebrow">Collection {heroConfig!.number}</p>
+            <h1 className="ic-hero-title">{heroConfig!.title}</h1>
+            <p className="ic-hero-subtitle">{heroConfig!.subtitle}</p>
+            <p className="ic-hero-meta">
+              {heroConfig!.region}
+              <span aria-hidden="true"> · </span>
+              {heroConfig!.yearRange}
+            </p>
+            <div className="ic-divider" aria-hidden="true" />
+            <p className="ic-body">{heroConfig!.description}</p>
+            {heroConfig!.tags && heroConfig!.tags.length > 0 && (
+              <ul className="ic-tags" aria-label="Collection themes">
+                {heroConfig!.tags.map((tag) => (
+                  <li key={tag} className="ic-tag">{tag}</li>
+                ))}
+              </ul>
+            )}
+            <div className="ic-status" aria-label="Production status: audio in production">
+              <span className="ic-status-dot" aria-hidden="true" />
+              <span className="ic-status-text">
+                Audio in production. Visual rendering forthcoming.
+              </span>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="ic-eyebrow" aria-hidden="true">Immersive Experience</p>
+            <h3 className="ic-title">
+              The Tribunal Room<br />
+              Port Harcourt, 1995
+            </h3>
+            <p className="ic-body">
+              Four spatial audio recordings will provide distinct listening experiences
+              of the 1995 Special Military Tribunal proceedings, each reflecting how
+              an individual&apos;s position in the room shaped their acoustic encounter
+              with the exercise of state power.
+            </p>
+            <p className="ic-body">
+              Select a position to hear the tribunal from that seat. Visual rendering
+              and binaural audio will shift simultaneously to reflect the acoustic
+              character of each location.
+            </p>
+            <div className="ic-status" aria-label="Production status: audio in production">
+              <span className="ic-status-dot" aria-hidden="true" />
+              <span className="ic-status-text">
+                Audio in production. Visual rendering forthcoming.
+              </span>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* Right: 2×2 perspective card grid */}
+      {/* ── Right: 2×2 perspective card grid ── */}
       <div className="ic-grid" role="list" aria-label="Available listening perspectives">
         {PERSPECTIVES.map((p) => (
           <div key={p.id} className="ic-card" role="listitem">
@@ -104,12 +160,33 @@ export default function ImmersiveCourtroom() {
       </div>
 
       <style>{`
+        /* ── Base wrapper ── */
         .ic-wrap {
           display: flex;
           border: 1px solid rgba(201,168,76,0.22);
           border-radius: 8px;
           overflow: hidden;
         }
+
+        /* ── Hero mode: fills viewport, no decorative border ── */
+        .ic-hero {
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid rgba(201,168,76,0.15);
+          min-height: 100svh;
+          padding-top: 100px;
+        }
+        .ic-hero .ic-left {
+          justify-content: center;
+          padding: clamp(40px, 4vw, 64px) clamp(28px, 5vw, 72px);
+          flex: 0 0 40%;
+          gap: 16px;
+        }
+        .ic-hero .ic-card {
+          min-height: calc((100svh - 100px) / 2);
+        }
+
+        /* ── Left panel (shared) ── */
         .ic-left {
           flex: 0 0 38%;
           padding: 44px 36px;
@@ -119,6 +196,59 @@ export default function ImmersiveCourtroom() {
           flex-direction: column;
           gap: 18px;
         }
+
+        /* ── Hero left panel content ── */
+        .ic-hero-title {
+          font-family: var(--font-heading);
+          font-weight: 900;
+          font-size: clamp(32px, 3.8vw, 58px);
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          color: #FFFFFF;
+          margin: 0;
+        }
+        .ic-hero-subtitle {
+          font-family: var(--font-body);
+          font-style: italic;
+          font-size: clamp(15px, 1.3vw, 19px);
+          color: rgba(255,255,255,0.75);
+          margin: 0;
+          line-height: 1.5;
+        }
+        .ic-hero-meta {
+          font-family: var(--font-ui);
+          font-size: 12px;
+          letter-spacing: 0.06em;
+          color: rgba(255,255,255,0.4);
+          margin: 0;
+        }
+        .ic-divider {
+          height: 1px;
+          background: rgba(201,168,76,0.2);
+          flex-shrink: 0;
+        }
+        .ic-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .ic-tag {
+          font-family: var(--font-ui);
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #C9A84C;
+          background: rgba(201,168,76,0.1);
+          border: 1px solid rgba(201,168,76,0.25);
+          border-radius: 3px;
+          padding: 3px 8px;
+        }
+
+        /* ── Default left panel content ── */
         .ic-eyebrow {
           font-family: var(--font-ui);
           font-size: 10px;
@@ -152,6 +282,7 @@ export default function ImmersiveCourtroom() {
           background: rgba(201,168,76,0.07);
           border: 1px dashed rgba(201,168,76,0.28);
           border-radius: 4px;
+          flex-shrink: 0;
         }
         .ic-status-dot {
           display: inline-block;
@@ -168,6 +299,8 @@ export default function ImmersiveCourtroom() {
           color: rgba(201,168,76,0.8);
           line-height: 1.5;
         }
+
+        /* ── Card grid ── */
         .ic-grid {
           flex: 1;
           display: grid;
@@ -234,22 +367,27 @@ export default function ImmersiveCourtroom() {
           outline-offset: 3px;
         }
 
-        /* Tablet */
+        /* ── Responsive ── */
         @media (max-width: 860px) {
           .ic-wrap { flex-direction: column; }
           .ic-left {
             flex: none;
             border-right: none;
             border-bottom: 1px solid rgba(201,168,76,0.15);
-            padding: 32px 28px;
+            padding: 32px 28px !important;
           }
-          .ic-status { margin-top: 4px; }
+          .ic-hero {
+            padding-top: 100px;
+            min-height: auto;
+          }
+          .ic-hero .ic-card { min-height: 180px !important; }
+          .ic-status { margin-top: 8px; }
         }
-        /* Mobile */
         @media (max-width: 560px) {
           .ic-grid { grid-template-columns: 1fr !important; }
-          .ic-card { min-height: auto; padding: 24px 20px; }
-          .ic-left { padding: 28px 20px; }
+          .ic-card { min-height: auto !important; padding: 24px 20px; }
+          .ic-left { padding: 28px 20px !important; }
+          .ic-hero-title { font-size: 32px !important; }
         }
       `}</style>
     </div>
