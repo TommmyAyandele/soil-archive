@@ -31,7 +31,7 @@ export default function ContactPage() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 18, lineHeight: 1.7, color: "#FFFFFF", maxWidth: 540, margin: 0 }}>
               Whether you have archival material to contribute, a correction to flag, a collaboration to propose, or a question about the collections — we want to hear from you.
             </p>
           </ScrollReveal>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                   <path d="M14 24l7 7 13-13" stroke="#C9A84C" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 <h2 style={{ fontFamily: "var(--font-heading)", fontSize: 24, color: "#FFFFFF", margin: "0 0 10px" }}>Received.</h2>
-                <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 16, color: "rgba(255,255,255,0.85)", margin: 0 }}>
+                <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 16, color: "#FFFFFF", margin: 0 }}>
                   We will be in touch. Thank you for reaching out.
                 </p>
               </div>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   <h3 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 20, color: "#FFFFFF", margin: "0 0 12px" }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.75, color: "rgba(255,255,255,0.85)", margin: 0 }}>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.75, color: "#FFFFFF", margin: 0 }}>
                     {item.body}
                   </p>
                 </div>

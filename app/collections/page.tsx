@@ -34,7 +34,7 @@ export default function CollectionsIndexPage() {
           <ScrollReveal delay={2}>
             <p style={{
               fontFamily: "var(--font-body)", fontStyle: "italic",
-              fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.85)", maxWidth: 540, margin: 0,
+              fontSize: 18, lineHeight: 1.7, color: "#FFFFFF", maxWidth: 540, margin: 0,
             }}>
               Each collection is a recovered archive — a place where silenced voices, buried histories, and ongoing struggles for justice are held and made accessible.
             </p>
@@ -46,7 +46,7 @@ export default function CollectionsIndexPage() {
       <section style={{ padding: "72px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           {collections.length === 0 ? (
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "rgba(255,255,255,0.85)" }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", color: "#FFFFFF" }}>
               No collections found. Add a collection to the <code>content/collections/</code> directory.
             </p>
           ) : (
@@ -135,7 +135,7 @@ export default function CollectionsIndexPage() {
                   </span>
                   <p style={{
                     fontFamily: "var(--font-heading)", fontStyle: "italic",
-                    fontSize: 18, color: "rgba(255,255,255,0.5)", margin: 0,
+                    fontSize: 18, color: "#FFFFFF", margin: 0,
                   }}>
                     More collections are being researched, authenticated, and prepared for publication.
                   </p>

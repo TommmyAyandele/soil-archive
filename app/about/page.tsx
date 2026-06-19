@@ -18,7 +18,7 @@ export default function AboutPage() {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "rgba(255,255,255,0.85)", margin: 0 }}>
+            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "#FFFFFF", margin: 0 }}>
               The Soil Archive is a public digital archive platform designed to house multiple collections of suppressed African voices, histories, and justice stories. It is built to grow — each new collection added without rebuilding anything, every voice recovered and held with care.
             </p>
           </ScrollReveal>
@@ -51,7 +51,7 @@ export default function AboutPage() {
                   {section.heading}
                 </h2>
                 {section.body.split("\n\n").map((para, j) => (
-                  <p key={j} style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.8, color: "rgba(255,255,255,0.85)", margin: "0 0 18px" }}>
+                  <p key={j} style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 18px" }}>
                     {para}
                   </p>
                 ))}
