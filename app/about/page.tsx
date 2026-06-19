@@ -5,7 +5,7 @@ export const metadata = { title: "About — The Soil Archive" };
 export default function AboutPage() {
   return (
     <div style={{ background: "transparent" }}>
-      <section className="kente-border" style={{ padding: "120px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
+      <section style={{ padding: "120px 24px 80px" }}>
         <div style={{ maxWidth: 860, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>
@@ -13,54 +13,54 @@ export default function AboutPage() {
             </span>
           </ScrollReveal>
           <ScrollReveal delay={1}>
-            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(36px, 5vw, 60px)", lineHeight: 1.1, color: "#FFFFFF", margin: "0 0 28px" }}>
-              What is the Soil Archive?
+            <h1 style={{ fontFamily: "var(--font-heading)", fontWeight: 900, fontSize: "clamp(40px, 5.5vw, 72px)", lineHeight: 1.05, color: "#FFFFFF", margin: "0 0 40px" }}>
+              A record against erasure.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={2}>
-            <p style={{ fontFamily: "var(--font-body)", fontStyle: "italic", fontSize: 19, lineHeight: 1.75, color: "#FFFFFF", margin: 0 }}>
-              The Soil Archive is a public digital archive platform designed to house multiple collections of suppressed African voices, histories, and justice stories. It is built to grow — each new collection added without rebuilding anything, every voice recovered and held with care.
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 28px" }}>
+              The Soil Archive is a digital humanities initiative dedicated to the preservation, contextualization, and public accessibility of suppressed African historical records. It brings together primary documents, oral histories, archival materials, and immersive digital media to create publicly accessible collections that support scholarship, pedagogy, and civic engagement.
+            </p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 28px" }}>
+              The archive operates at the intersection of digital humanities, postcolonial studies, African history, and environmental humanities. Each collection is developed through rigorous historical research, community consultation, and the integration of emerging technologies including AI-assisted voice synthesis, spatial audio, and immersive 3D environments.
+            </p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.8, color: "#FFFFFF", margin: 0 }}>
+              The Soil Archive is committed to ensuring that the communities whose histories it documents are active participants in the production of knowledge, not merely subjects of it. Each collection is developed in consultation with relevant community members, scholars, and cultural custodians.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
-      <section style={{ padding: "80px 24px" }}>
-        <div style={{ maxWidth: 860, margin: "0 auto" }}>
-          {[
-            {
-              heading: "Why This Archive Exists",
-              body: `History is made by those who control the record. States suppress inconvenient truths. Corporations bury accountability. Colonial structures were built, in part, to make African history illegible to Africans themselves.\n\nThis archive refuses that erasure. It is a space where the people who were silenced — the activists, the writers, the farmers, the mothers, the community leaders — can be found, heard, and learned from.\n\nThe first collection, The Ogoni Nine, begins with Nigeria in 1995. It will not be the last.`,
-            },
-            {
-              heading: "Our Framing",
-              body: `We are not neutral on injustice.\n\nThis archive is justice-oriented, postcolonial, and grounded in African political and environmental history. We stand with the communities whose stories we hold. Our framing does not pretend to a false objectivity that treats perpetrators and victims as equally positioned.\n\nThis does not mean we are careless with facts. Accuracy and dignity are non-negotiable. Every piece of content in this archive is labelled — verified historical record, archival document, or placeholder — so visitors always know what they are reading.`,
-            },
-            {
-              heading: "How the Archive is Built to Grow",
-              body: `Every design and technical decision in this platform is made to support adding new collections over time without rebuilding anything.\n\nAdding a new collection requires only creating a new folder in the content directory with an MDX overview file, a JSON timeline, a JSON documents list, and a config file. No changes to the codebase.\n\nSee the README for full instructions on how to contribute a collection.`,
-            },
-            {
-              heading: "A Note on Placeholders",
-              body: `Some content in the current collections is labelled [PLACEHOLDER]. This means the full content — a photograph, a document, a testimony — is being authenticated, rights-cleared, or prepared. We label placeholders clearly rather than fill gaps with speculation.\n\nWe will never fabricate quotes, invent details, or present unverified material as fact.`,
-            },
-          ].map((section, i) => (
-            <ScrollReveal key={section.heading} delay={(i % 3) as 0 | 1 | 2}>
-              <div style={{ marginBottom: 56 }}>
-                <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 28, color: "#FFFFFF", margin: "0 0 18px" }}>
-                  {section.heading}
-                </h2>
-                {section.body.split("\n\n").map((para, j) => (
-                  <p key={j} style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.8, color: "#FFFFFF", margin: "0 0 18px" }}>
-                    {para}
-                  </p>
-                ))}
-                <div style={{ height: 1, background: "rgba(201,168,76,0.2)", marginTop: 40 }}/>
-              </div>
-            </ScrollReveal>
-          ))}
+      <section style={{ padding: "0 24px 100px" }}>
+        <div style={{ maxWidth: 860, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="about-cols">
+          <ScrollReveal>
+            <div style={{ background: "rgba(20,15,10,0.5)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8, padding: "36px 32px" }}>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 22, color: "#C9A84C", margin: "0 0 18px" }}>
+                Our Method
+              </h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "#FFFFFF", margin: 0 }}>
+                Each collection begins with archival research and community engagement. Primary sources are gathered, verified, and contextualized before any digital production begins. Immersive media is developed only after the historical record has been established with rigor and care.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={1}>
+            <div style={{ background: "rgba(20,15,10,0.5)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: 8, padding: "36px 32px" }}>
+              <h2 style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: 22, color: "#C9A84C", margin: "0 0 18px" }}>
+                Our Commitment
+              </h2>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.8, color: "#FFFFFF", margin: 0 }}>
+                The Soil Archive is a living platform. Collections are added as research is completed and community consent is secured. Every record published here has been handled with the dignity its subjects deserve.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .about-cols { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   );
 }
