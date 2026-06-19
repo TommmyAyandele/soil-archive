@@ -102,11 +102,9 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
             <div className="ic-rule" aria-hidden="true" />
             <p className="ic-body">{heroConfig!.description}</p>
             {heroConfig!.tags && heroConfig!.tags.length > 0 && (
-              <ul className="ic-tags" aria-label="Collection themes">
-                {heroConfig!.tags.map((tag) => (
-                  <li key={tag} className="ic-tag">{tag}</li>
-                ))}
-              </ul>
+              <p className="ic-tags-line" aria-label="Collection themes">
+                {heroConfig!.tags.join(" · ")}
+              </p>
             )}
             <p className="ic-footnote">
               Recordings will be linked as they become available.
@@ -221,24 +219,13 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
           color: rgba(255,255,255,0.75);
           margin: 0;
         }
-        .ic-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-        .ic-tag {
+        .ic-tags-line {
           font-family: var(--font-ui);
-          font-size: 10px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(201,168,76,0.7);
-          border: 1px solid rgba(201,168,76,0.2);
-          border-radius: 2px;
-          padding: 3px 7px;
+          font-size: 11px;
+          color: rgba(255,255,255,0.32);
+          letter-spacing: 0.03em;
+          margin: 0;
+          line-height: 1.7;
         }
         .ic-footnote {
           font-family: var(--font-body);
