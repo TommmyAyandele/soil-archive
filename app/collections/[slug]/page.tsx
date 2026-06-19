@@ -287,11 +287,11 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
               [PLACEHOLDER] Teaching resources for this collection are in preparation. This section will include:
             </p>
             <ul style={{ fontFamily: "var(--font-body)", fontSize: 16, color: "#FFFFFF", lineHeight: 2, margin: 0 }}>
-              <li>Curriculum-aligned discussion guides</li>
+              <li>Curriculum-aligned discussion guides for secondary and university-level courses</li>
               <li>Downloadable timeline posters</li>
               <li>Annotated primary source packets</li>
-              <li>Video explainers on Ogoni history and MOSOP</li>
-              <li>Glossary of key terms (Ogoni, Niger Delta, MOSOP, environmental justice)</li>
+              <li>Annotated bibliography of peer-reviewed scholarship on the Ogoni Nine, MOSOP, and Niger Delta environmental justice</li>
+              <li>Glossary of key terms (Ogoni, Niger Delta, MOSOP, environmental justice, military tribunal)</li>
             </ul>
           </div>
         </div>
