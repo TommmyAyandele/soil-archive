@@ -12,7 +12,7 @@ export default function CollectionsIndexPage() {
   return (
     <div style={{ background: "transparent", minHeight: "100vh" }}>
       {/* Header */}
-      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
+      <section className="kente-border" style={{ padding: "120px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{

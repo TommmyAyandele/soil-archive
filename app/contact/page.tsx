@@ -18,7 +18,7 @@ export default function ContactPage() {
 
   return (
     <div style={{ background: "transparent" }}>
-      <section className="kente-border" style={{ padding: "72px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
+      <section className="kente-border" style={{ padding: "120px 24px 64px", background: "rgba(180,110,20,0.12)" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
             <span style={{ display: "block", fontFamily: "var(--font-ui)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase" as const, color: "#C17D11", marginBottom: 20 }}>

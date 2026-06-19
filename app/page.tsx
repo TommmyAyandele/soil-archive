@@ -304,6 +304,14 @@ export default function HomePage() {
         .btn-filled:hover { background: #6B3410; border-color: #6B3410; color: #F5E6C8; }
         .archive-card { transition: border-color 0.2s, background 0.2s; }
         .archive-card:hover { border-color: rgba(201,168,76,0.32) !important; background: rgba(20,16,12,0.72) !important; }
+        @media (max-width: 768px) {
+          #archive {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+          #archive h2 { font-size: 32px !important; letter-spacing: -0.02em !important; }
+          #archive > p { margin-bottom: 40px !important; }
+        }
         @media (max-width: 680px) {
           .archive-cards { grid-template-columns: 1fr !important; }
         }

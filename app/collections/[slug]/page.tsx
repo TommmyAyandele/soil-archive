@@ -59,7 +59,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
       {/* ══ HERO ══ */}
       <section style={{
         background: config.coverColor,
-        padding: "80px 24px 72px",
+        padding: "120px 24px 72px",
         position: "relative",
         overflow: "hidden",
       }}>
