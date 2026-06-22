@@ -33,6 +33,9 @@ export interface Document {
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "collections");
 
+export const SUPPORTED_LANGS = ["english", "igbo", "hausa", "yoruba", "khana"] as const;
+export type SupportedLang = (typeof SUPPORTED_LANGS)[number];
+
 export function getAllCollections(): CollectionConfig[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
   const slugs = fs.readdirSync(CONTENT_DIR).filter((d) => {
@@ -50,7 +53,31 @@ export function getCollectionConfig(slug: string): CollectionConfig | null {
   return { slug, ...JSON.parse(raw) };
 }
 
-export function getCollectionOverview(slug: string): { content: string; data: Record<string, unknown> } | null {
+export function getAvailableLanguages(slug: string): string[] {
+  const transDir = path.join(CONTENT_DIR, slug, "translations");
+  const available: string[] = ["english"];
+  if (!fs.existsSync(transDir)) return available;
+  const dirs = fs.readdirSync(transDir).filter((d) => {
+    const p = path.join(transDir, d);
+    if (!fs.statSync(p).isDirectory()) return false;
+    return fs.existsSync(path.join(p, "index.mdx"));
+  });
+  return [...available, ...dirs];
+}
+
+export function getCollectionOverview(
+  slug: string,
+  lang?: string
+): { content: string; data: Record<string, unknown> } | null {
+  const normalized = lang?.toLowerCase();
+  if (normalized && normalized !== "english") {
+    const transPath = path.join(CONTENT_DIR, slug, "translations", normalized, "index.mdx");
+    if (fs.existsSync(transPath)) {
+      const raw = fs.readFileSync(transPath, "utf-8");
+      const { content, data } = matter(raw);
+      return { content, data };
+    }
+  }
   const mdxPath = path.join(CONTENT_DIR, slug, "index.mdx");
   if (!fs.existsSync(mdxPath)) return null;
   const raw = fs.readFileSync(mdxPath, "utf-8");
@@ -58,13 +85,27 @@ export function getCollectionOverview(slug: string): { content: string; data: Re
   return { content, data };
 }
 
-export function getCollectionTimeline(slug: string): TimelineEntry[] {
+export function getCollectionTimeline(slug: string, lang?: string): TimelineEntry[] {
+  const normalized = lang?.toLowerCase();
+  if (normalized && normalized !== "english") {
+    const transPath = path.join(CONTENT_DIR, slug, "translations", normalized, "timeline.json");
+    if (fs.existsSync(transPath)) {
+      return JSON.parse(fs.readFileSync(transPath, "utf-8"));
+    }
+  }
   const jsonPath = path.join(CONTENT_DIR, slug, "timeline.json");
   if (!fs.existsSync(jsonPath)) return [];
   return JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
 }
 
-export function getCollectionDocuments(slug: string): Document[] {
+export function getCollectionDocuments(slug: string, lang?: string): Document[] {
+  const normalized = lang?.toLowerCase();
+  if (normalized && normalized !== "english") {
+    const transPath = path.join(CONTENT_DIR, slug, "translations", normalized, "documents.json");
+    if (fs.existsSync(transPath)) {
+      return JSON.parse(fs.readFileSync(transPath, "utf-8"));
+    }
+  }
   const jsonPath = path.join(CONTENT_DIR, slug, "documents.json");
   if (!fs.existsSync(jsonPath)) return [];
   return JSON.parse(fs.readFileSync(jsonPath, "utf-8"));

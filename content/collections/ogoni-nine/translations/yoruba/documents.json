@@ -1,0 +1,50 @@
+[
+  {
+    "type": "speech",
+    "title": "Ọ̀rọ̀ tí Ken Saro-Wiwa Fẹ́ Sọ ní Ilé-Ẹjọ́",
+    "date": "Ọkọtọba 1995",
+    "author": "Ken Saro-Wiwa",
+    "placeholder": false,
+    "body": "Gbogbo wa ń kójọ sínú ìtàn. Mo jẹ́ ọkùnrin alálẹ̀, ọkùnrin ìmọ̀. Mẹ́nu tìtì bàmi nípa ipò àwọn ènìyàn mi tí wọ́n ń jẹ́ jíjẹ nípasẹ̀ ìṣèlú àti ohun tí wọ́n gbà, nípa ìbàjẹ́ ilẹ̀ wọn — ohun ìgbẹ́jókòó wọn tó pẹ̀lú — ní iṣẹ́ látọwọ́ àwọn tí wọ́n ń béèrè fún àwọn ẹ̀tọ́ láti jẹ́, tí wọ́n sì fẹ́ mú àwùjọ yìí sínú ìjọba tí ó ń tọ́jú gbogbo ènìyàn àti gbogbo ẹgbẹ́ déédéé tí ó sì máa ń fún wa gbogbo ní àǹfààní tó pé nínú ìjòkòó ẹ̀dá ènìyàn, tí mo sì fi àwọn àgbàdo mi, ìgbésí-ayé mi pẹ̀lú, nínú ohun tí mo gbagbọ́ pẹ̀lú gbogbo ọkàn àti ohun tí mi ò lè jẹ́ kó yapa lọwọ́ ìṣèlú tàbí ìjàkadì.\n\nMí ò rí ohun kan láti mú mi padà nínú àbájáde ìkẹyìn ohun tí mo ń lépa, ó ì bá jẹ́ ìjàkadì tàbí ìgbìyànjú ìsinsìnyí. Ẹ̀wọ̀n tàbí ikú lè túmọ̀ sí ìborí ìkẹyìn.\n\n[Ken Saro-Wiwa tú ọ̀rọ̀ yìí kúrò nínú ilé-ẹjọ́. A gba a lọ́wọ́ ẹbí rẹ̀ tí ó sì jẹ́ apá kan ìkójọpọ̀ yìí. — Ilé-Ìkójọpọ̀]"
+  },
+  {
+    "type": "text",
+    "title": "Iwe Ẹ̀tọ́ Ogoni (Ìdásí)",
+    "date": "Oṣù Ẹjọ 1990",
+    "author": "MOSOP",
+    "placeholder": false,
+    "body": "Àwa àwọn Ogoni, ẹgbẹ́ tí ó yàtọ̀ àti pàtàkì nínú Ìparapọ̀ Nàìjíríà, fi ìjọba Nàìjíríà àti àgbáyé gbogbo lógún nípa ipò wa nínú Ìparapọ̀ Nàìjíríà ní àsìkò yìí, tí a sì béèrè fún ìrànlọ́wọ́ àti ìgbésẹ̀ pàtàkì.\n\nÀwọn Ogoni ti rí i pé wọ́n ń ṣe afikun sí ire àwùjọ gbogbo láìsí ìmọ̀ sí ìdàgbàsókè àgbègbè Ogoni. Bí ó ti jẹ́ pé àwọn Ogoni ń mú epo tí wọ́n ń pín, àgbègbè Ogoni ṣì wà ní ìpele ìbẹ̀rẹ̀ ìdàgbàsókè.\n\nGẹ́gẹ́ bí ọ̀nà ìgbẹ́bọ̀ fún àwọn nǹkan tí àwọn Ogoni ní, a béèrè fún agbára ìṣèlú láti kópa nínú àwọn ọ̀rọ̀ tí Ìjọba ní gẹ́gẹ́ bí ẹgbẹ́ tó yàtọ̀ àti pàtàkì.\n\n[Èyí jẹ́ ìdásí kan láti inú ìwé àpilẹ̀kọ àwọn Ogoni Bill of Rights, 1990.]"
+  },
+  {
+    "type": "letter",
+    "title": "Lẹ́tà Ken Saro-Wiwa sí Greenpeace",
+    "date": "1994",
+    "author": "Ken Saro-Wiwa",
+    "placeholder": true,
+    "body": "[ÌDÁDÚRÓ — A ń ṣiṣẹ́ lórí ìtumọ̀ Yorùbá lẹ́tà yìí. — Ilé-Ìkójọpọ̀]"
+  },
+  {
+    "type": "text",
+    "title": "Ẹrí Ẹni Tó Yípadà",
+    "date": "Lẹ́yìn 1995",
+    "author": "Ilé-Ìkójọpọ̀",
+    "placeholder": true,
+    "body": "[ÌDÁDÚRÓ — A ń ṣiṣẹ́ lórí ìtumọ̀ Yorùbá ìwé yìí. — Ilé-Ìkójọpọ̀]"
+  },
+  {
+    "type": "photograph",
+    "title": "Ken Saro-Wiwa ní àpéjọ MOSOP, bí ọdún 1993",
+    "date": "bí ọdún 1993",
+    "author": "Ayàwòrán àìmọye",
+    "placeholder": true,
+    "body": "[ÌDÁDÚRÓ — A ń wá àṣẹ àwòrán. — Ilé-Ìkójọpọ̀]"
+  },
+  {
+    "type": "poem",
+    "title": "Africa Kills Her Sun",
+    "date": "1986",
+    "author": "Ken Saro-Wiwa",
+    "placeholder": true,
+    "body": "[ÌDÁDÚRÓ — Ìtumọ̀ Yorùbá orin yìí ń bọ̀. Orin náà wà lábẹ́ ẹ̀tọ́ àkọwé ilé Saro-Wiwa. — Ilé-Ìkójọpọ̀]"
+  }
+]

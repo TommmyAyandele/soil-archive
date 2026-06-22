@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import {
   getCollectionConfig,
   getCollectionOverview,
   getCollectionTimeline,
   getCollectionDocuments,
+  getAvailableLanguages,
   getAllCollections,
+  SUPPORTED_LANGS,
 } from "@/lib/collections";
 import Timeline from "@/components/timeline/Timeline";
 import ImmersiveCourtroom from "@/components/courtroom/ImmersiveCourtroom";
@@ -45,14 +48,25 @@ const SECTION_HEADING: React.CSSProperties = {
   margin: "0 0 28px",
 };
 
-export default async function CollectionPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CollectionPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const { slug } = await params;
+  const sp = await searchParams;
+  const rawLang = typeof sp.lang === "string" ? sp.lang.toLowerCase() : "english";
+  const lang = (SUPPORTED_LANGS as readonly string[]).includes(rawLang) ? rawLang : "english";
+
   const config = getCollectionConfig(slug);
   if (!config) notFound();
 
-  const overview = getCollectionOverview(slug);
-  const timeline = getCollectionTimeline(slug);
-  const documents = getCollectionDocuments(slug);
+  const availableLangs = getAvailableLanguages(slug);
+  const overview = getCollectionOverview(slug, lang);
+  const timeline = getCollectionTimeline(slug, lang);
+  const documents = getCollectionDocuments(slug, lang);
 
   const heroConfig = {
     number: config.number,
@@ -68,7 +82,9 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
     <div style={{ background: "transparent" }}>
 
       {/* ══ LANGUAGE BAR ══ */}
-      <LanguageBar />
+      <Suspense fallback={<div style={{ marginTop: 100, minHeight: 52, background: "rgba(10,8,6,0.6)", borderBottom: "1px solid rgba(255,255,255,0.08)" }} />}>
+        <LanguageBar slug={slug} currentLang={lang} availableLangs={availableLangs} />
+      </Suspense>
 
       {/* ══ HERO + PERSPECTIVES ══ */}
       <ImmersiveCourtroom heroConfig={heroConfig} />
