@@ -136,9 +136,24 @@ export default function HomePage() {
                 <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.75, color: "rgba(255,255,255,0.7)", margin: 0, flex: 1 }}>
                   {col.description ?? col.subtitle}
                 </p>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#FFFFFF", margin: "28px 0 0" }}>
+                <span style={{
+                  display: "inline-block",
+                  marginTop: 28,
+                  fontFamily: "var(--font-body)",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "#F5E6C8",
+                  background: "transparent",
+                  border: "1px solid rgba(139,69,19,0.6)",
+                  borderRadius: 2,
+                  padding: "8px 18px",
+                  letterSpacing: "0.04em",
+                  transition: "background 0.22s, border-color 0.22s, color 0.22s, transform 0.1s cubic-bezier(0.16,1,0.3,1)",
+                }}
+                  className="enter-cta"
+                >
                   Enter Collection →
-                </p>
+                </span>
               </article>
             </Link>
           ))}
@@ -260,6 +275,12 @@ export default function HomePage() {
         .btn-filled:hover { background: #6B3410; border-color: #6B3410; }
         .archive-card { transition: border-color 0.2s, background 0.2s; }
         .archive-card:hover { border-color: rgba(201,168,76,0.32) !important; background: rgba(20,16,12,0.72) !important; }
+        .archive-card:hover .enter-cta {
+          background: #8B4513;
+          border-color: #8B4513;
+          color: #F5E6C8;
+          transform: translateY(-1px);
+        }
 
         /* ── Tablet (≤900px) ── */
         @media (max-width: 900px) {
