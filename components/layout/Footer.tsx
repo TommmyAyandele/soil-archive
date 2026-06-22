@@ -61,7 +61,7 @@ export default function Footer() {
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#C17D11", margin: "0 0 16px" }}>
               Collections
             </p>
-            <Link href="/collections/ogoni-nine" style={{ display: "block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
+            <Link href="/collections/ogoni-nine" className="footer-link" style={{ display: "inline-block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
               001 — The Ogoni Nine
             </Link>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", fontStyle: "italic", margin: 0 }}>
@@ -80,7 +80,7 @@ export default function Footer() {
               { href: "/about", label: "About the Archive" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
-              <Link key={href} href={href} style={{ display: "block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
+              <Link key={href} href={href} className="footer-link" style={{ display: "inline-block", fontSize: 14, color: "rgba(255,255,255,0.7)", marginBottom: 10, textDecoration: "none" }}>
                 {label}
               </Link>
             ))}

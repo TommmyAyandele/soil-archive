@@ -265,10 +265,12 @@ export default function ImmersiveCourtroom({ heroConfig, perspectives: perspecti
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          transition: border-color 0.2s;
+          transition: border-color 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.25s;
         }
         .ic-card:hover {
-          border-color: rgba(201,168,76,0.28);
+          border-color: rgba(201,168,76,0.32);
+          transform: translateY(-4px);
+          background: rgba(20,14,8,0.82);
         }
 
         /* ─── Video slot ─── */

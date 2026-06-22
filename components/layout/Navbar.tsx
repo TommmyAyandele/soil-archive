@@ -34,19 +34,19 @@ export default function Navbar() {
       {/* Desktop nav */}
       <nav role="navigation" aria-label="Primary navigation" style={{ display: "flex", alignItems: "center", gap: 64 }} className="nav-desktop">
         <div style={{ display: "flex", alignItems: "center", gap: 64 }}>
-          <Link href="/#about" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
+          <Link href="/#about" className="nav-link" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
             About
           </Link>
-          <Link href="/#contact" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
+          <Link href="/#contact" className="nav-link" style={{ fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 18, color: "#FFFFFF", textDecoration: "none" }}>
             Contact
           </Link>
         </div>
-        <Link href="/#archive" style={{
+        <Link href="/#archive" className="btn-press" style={{
           fontFamily: "var(--font-body)", fontWeight: 400, fontSize: 16,
           color: "#F5E6C8", background: "#8B4513",
           padding: "10px 20px", borderRadius: 2,
           textDecoration: "none", display: "inline-block",
-          transition: "background 0.2s",
+          transition: "background 0.2s, transform 0.1s cubic-bezier(0.16,1,0.3,1)",
         }}
           onMouseEnter={(e) => (e.currentTarget.style.background = "#6B3410")}
           onMouseLeave={(e) => (e.currentTarget.style.background = "#8B4513")}

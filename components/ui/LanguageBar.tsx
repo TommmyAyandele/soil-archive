@@ -83,6 +83,7 @@ export default function LanguageBar({ slug, currentLang, availableLangs }: Props
             return (
               <button
                 key={lang}
+                className={isAvailable && !isActive ? "btn-press" : ""}
                 onClick={() => isAvailable && !isActive && switchLang(lang)}
                 disabled={!isAvailable}
                 aria-pressed={isActive}

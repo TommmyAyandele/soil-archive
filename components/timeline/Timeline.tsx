@@ -11,12 +11,22 @@ export default function Timeline({ entries }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      // Immediately show all entries
-      containerRef.current?.querySelectorAll(".ink-entry").forEach((el) => {
-        el.classList.add("visible");
-      });
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduced) {
+      containerRef.current?.querySelectorAll(".ink-entry").forEach((el) => el.classList.add("visible"));
+      containerRef.current?.querySelector(".timeline-line")?.classList.add("drawn");
       return;
+    }
+
+    // Draw the vertical line when the container enters view
+    const lineEl = containerRef.current?.querySelector(".timeline-line");
+    if (lineEl) {
+      const lineObserver = new IntersectionObserver(
+        ([e]) => { if (e.isIntersecting) { lineEl.classList.add("drawn"); lineObserver.disconnect(); } },
+        { threshold: 0.05 }
+      );
+      lineObserver.observe(containerRef.current!);
     }
 
     const els = containerRef.current?.querySelectorAll(".ink-entry");
