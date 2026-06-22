@@ -10,27 +10,36 @@ export interface HeroConfig {
   tags?: string[];
 }
 
-interface Props {
-  heroConfig?: HeroConfig;
-}
-
-type Perspective = {
+export interface PerspectiveData {
   id: string;
   label: string;
   position: string;
   description: string;
-  /* Set to the YouTube video ID when the recording is ready. Null shows the pending state. */
-  videoId: string | null;
-};
+}
 
-const PERSPECTIVES: Perspective[] = [
+export interface CourtroomStrings {
+  heading?: string;
+  location?: string;
+  body?: string;
+  footnote?: string;
+  heroFootnote?: string;
+}
+
+interface Props {
+  heroConfig?: HeroConfig;
+  perspectives?: PerspectiveData[];
+  courtroomStrings?: CourtroomStrings;
+}
+
+type Perspective = PerspectiveData & { videoId: string | null };
+
+const DEFAULT_PERSPECTIVES: PerspectiveData[] = [
   {
     id: "judge",
     label: "Judge's Bench",
     position: "Tribunal Bench — North Wall",
     description:
       "From the military tribunal judge's position. The accused stand before you. The weight of the state's authority is at your back.",
-    videoId: null,
   },
   {
     id: "front",
@@ -38,7 +47,6 @@ const PERSPECTIVES: Perspective[] = [
     position: "Public Gallery — Row 1",
     description:
       "Behind the accused. You are close enough to see their faces. The tribunal's words land heavy in the air between you.",
-    videoId: null,
   },
   {
     id: "back",
@@ -46,7 +54,6 @@ const PERSPECTIVES: Perspective[] = [
     position: "Public Gallery — Rear",
     description:
       "From the rear of the gallery. The accused are small figures at the front. The room feels vast. Sound carries differently here.",
-    videoId: null,
   },
   {
     id: "gallery",
@@ -54,7 +61,6 @@ const PERSPECTIVES: Perspective[] = [
     position: "Restricted Press Section",
     description:
       "Where international observers and press were permitted to sit, under restriction. A different angle on power.",
-    videoId: null,
   },
 ];
 
@@ -80,8 +86,18 @@ function VideoSlot({ perspective }: { perspective: Perspective }) {
   );
 }
 
-export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
+export default function ImmersiveCourtroom({ heroConfig, perspectives: perspectiveProp, courtroomStrings }: Props = {}) {
   const isHero = !!heroConfig;
+  const PERSPECTIVES: Perspective[] = (perspectiveProp ?? DEFAULT_PERSPECTIVES).map((p) => ({
+    ...p,
+    videoId: null,
+  }));
+  const cs = courtroomStrings ?? {};
+  const roomHeading = cs.heading ?? "The Tribunal Room";
+  const roomLocation = cs.location ?? "Port Harcourt, 1995";
+  const roomBody = cs.body ?? "Four recordings document the 1995 Special Military Tribunal from distinct positions — each reflecting how location in the room shaped one’s encounter with the proceedings.";
+  const roomFootnote = cs.footnote ?? "Recordings will be linked as they become available.";
+  const heroFootnote = cs.heroFootnote ?? "Recordings will be linked as they become available.";
 
   return (
     <div
@@ -106,24 +122,17 @@ export default function ImmersiveCourtroom({ heroConfig }: Props = {}) {
                 {heroConfig!.tags.join(" · ")}
               </p>
             )}
-            <p className="ic-footnote">
-              Recordings will be linked as they become available.
-            </p>
+            <p className="ic-footnote">{heroFootnote}</p>
           </>
         ) : (
           <>
             <p className="ic-eyebrow" aria-hidden="true">Perspectives</p>
             <h3 className="ic-hero-title" style={{ fontSize: "clamp(24px,2.5vw,36px)" }}>
-              The Tribunal Room<br />Port Harcourt, 1995
+              {roomHeading}<br />{roomLocation}
             </h3>
             <div className="ic-rule" aria-hidden="true" />
-            <p className="ic-body">
-              Four recordings document the 1995 Special Military Tribunal from distinct positions —
-              each reflecting how location in the room shaped one&apos;s encounter with the proceedings.
-            </p>
-            <p className="ic-footnote">
-              Recordings will be linked as they become available.
-            </p>
+            <p className="ic-body">{roomBody}</p>
+            <p className="ic-footnote">{roomFootnote}</p>
           </>
         )}
       </div>

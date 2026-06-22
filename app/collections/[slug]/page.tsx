@@ -6,6 +6,7 @@ import {
   getCollectionTimeline,
   getCollectionDocuments,
   getAvailableLanguages,
+  getCollectionUI,
   getAllCollections,
   SUPPORTED_LANGS,
 } from "@/lib/collections";
@@ -67,16 +68,29 @@ export default async function CollectionPage({
   const overview = getCollectionOverview(slug, lang);
   const timeline = getCollectionTimeline(slug, lang);
   const documents = getCollectionDocuments(slug, lang);
+  const ui = getCollectionUI(slug, lang);
 
   const heroConfig = {
     number: config.number,
     title: config.title,
-    subtitle: config.subtitle,
+    subtitle: ui?.hero.subtitle ?? config.subtitle,
     region: config.region,
     yearRange: config.yearRange,
-    description: config.description ?? config.subtitle,
-    tags: config.tags,
+    description: ui?.hero.description ?? config.description ?? config.subtitle,
+    tags: ui?.hero.tags ?? config.tags,
   };
+
+  const sec = ui?.sections;
+  const sidebar = ui?.sidebar;
+  const overviewLabel = sec?.overviewLabel ?? "Overview & Historical Context";
+  const documentsLabel = sec?.documentsLabel ?? "Primary Documents";
+  const documentsHeading = sec?.documentsHeading ?? "Texts, Speeches & Photographs";
+  const timelineLabel = sec?.timelineLabel ?? "Timeline";
+  const timelineHeading = sec?.timelineHeading ?? "Key Events";
+  const teachingLabel = sec?.teachingLabel ?? "Teaching Resources";
+  const teachingHeading = sec?.teachingHeading ?? "For Educators & Students";
+  const sidebarLabel = sidebar?.label ?? "The Nine";
+  const sidebarExecuted = sidebar?.executed ?? "Executed 10 November 1995";
 
   return (
     <div style={{ background: "transparent" }}>
@@ -87,14 +101,18 @@ export default async function CollectionPage({
       </Suspense>
 
       {/* ══ HERO + PERSPECTIVES ══ */}
-      <ImmersiveCourtroom heroConfig={heroConfig} />
+      <ImmersiveCourtroom
+        heroConfig={heroConfig}
+        perspectives={ui?.perspectives}
+        courtroomStrings={ui?.courtroom}
+      />
 
       {/* ══ OVERVIEW ══ */}
       <section aria-label="Overview and historical context" className="col-section" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr", gap: 64 }} className="overview-grid">
           <div>
             <ScrollReveal>
-              <span style={SECTION_LABEL}>— Overview &amp; Historical Context</span>
+              <span style={SECTION_LABEL}>— {overviewLabel}</span>
             </ScrollReveal>
             {overview && (
               <div
@@ -113,10 +131,10 @@ export default async function CollectionPage({
                 position: "sticky", top: 80,
               }}>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: 10, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: "#F5E6C8", background: "#8B4513", display: "inline-block", padding: "3px 10px", borderRadius: 2, margin: "0 0 16px" }}>
-                  The Nine
+                  {sidebarLabel}
                 </p>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#FFFFFF", margin: "0 0 18px", fontStyle: "italic" }}>
-                  Executed 10 November 1995
+                  {sidebarExecuted}
                 </p>
                 {[
                   "Ken Saro-Wiwa",
@@ -148,8 +166,8 @@ export default async function CollectionPage({
       <section aria-label="Primary documents" className="col-section" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
-            <span style={SECTION_LABEL}>— Primary Documents</span>
-            <h2 style={SECTION_HEADING}>Texts, Speeches &amp; Photographs</h2>
+            <span style={SECTION_LABEL}>— {documentsLabel}</span>
+            <h2 style={SECTION_HEADING}>{documentsHeading}</h2>
           </ScrollReveal>
           <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
             {documents.map((doc, i) => (
@@ -220,8 +238,8 @@ export default async function CollectionPage({
       <section aria-label="Timeline of key events" className="col-section" style={{ background: "rgba(180,110,20,0.08)", padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
-            <span style={SECTION_LABEL}>— Timeline</span>
-            <h2 style={SECTION_HEADING}>Key Events, {config.yearRange}</h2>
+            <span style={SECTION_LABEL}>— {timelineLabel}</span>
+            <h2 style={SECTION_HEADING}>{timelineHeading}, {config.yearRange}</h2>
           </ScrollReveal>
           {timeline.length > 0 ? (
             <Timeline entries={timeline} />
@@ -237,8 +255,8 @@ export default async function CollectionPage({
       <section aria-label="Teaching resources" className="col-section" style={{ padding: "80px 24px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <ScrollReveal>
-            <span style={SECTION_LABEL}>— Teaching Resources</span>
-            <h2 style={SECTION_HEADING}>For Educators &amp; Students</h2>
+            <span style={SECTION_LABEL}>— {teachingLabel}</span>
+            <h2 style={SECTION_HEADING}>{teachingHeading}</h2>
           </ScrollReveal>
           <div className="teaching-box" style={{
             background: "rgba(201,168,76,0.08)", border: "1px dashed rgba(201,168,76,0.3)",

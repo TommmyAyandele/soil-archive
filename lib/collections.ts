@@ -31,6 +31,42 @@ export interface Document {
   placeholder?: boolean;
 }
 
+export interface UIPerspective {
+  id: string;
+  label: string;
+  position: string;
+  description: string;
+}
+
+export interface CollectionUI {
+  hero: {
+    subtitle: string;
+    description: string;
+    tags: string[];
+  };
+  sections: {
+    overviewLabel: string;
+    documentsLabel: string;
+    documentsHeading: string;
+    timelineLabel: string;
+    timelineHeading: string;
+    teachingLabel: string;
+    teachingHeading: string;
+  };
+  sidebar: {
+    label: string;
+    executed: string;
+  };
+  courtroom: {
+    heading: string;
+    location: string;
+    body: string;
+    footnote: string;
+    heroFootnote: string;
+  };
+  perspectives: UIPerspective[];
+}
+
 const CONTENT_DIR = path.join(process.cwd(), "content", "collections");
 
 export const SUPPORTED_LANGS = ["english", "igbo", "hausa", "yoruba", "khana"] as const;
@@ -96,6 +132,19 @@ export function getCollectionTimeline(slug: string, lang?: string): TimelineEntr
   const jsonPath = path.join(CONTENT_DIR, slug, "timeline.json");
   if (!fs.existsSync(jsonPath)) return [];
   return JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
+}
+
+export function getCollectionUI(slug: string, lang?: string): CollectionUI | null {
+  const normalized = lang?.toLowerCase();
+  if (normalized && normalized !== "english") {
+    const transPath = path.join(CONTENT_DIR, slug, "translations", normalized, "ui.json");
+    if (fs.existsSync(transPath)) {
+      return JSON.parse(fs.readFileSync(transPath, "utf-8")) as CollectionUI;
+    }
+  }
+  const basePath = path.join(CONTENT_DIR, slug, "ui.json");
+  if (!fs.existsSync(basePath)) return null;
+  return JSON.parse(fs.readFileSync(basePath, "utf-8")) as CollectionUI;
 }
 
 export function getCollectionDocuments(slug: string, lang?: string): Document[] {

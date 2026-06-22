@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "Shari'a da Kashe Masu Fafutukar Ogoni Tara, 1995",
+    "description": "Tarihin shari'ar kotun soja ta 1995 da kisan Ken Saro-Wiwa da sauran masu fafutuka takwas na Ogoni, da kuma jawabin shari'ar da aka haramta wanda ba a taɓa karanta shi a kotu ba.",
+    "tags": ["Adalcin Muhalli", "Fursunoni na Siyasa", "Najeriya", "Bakin Kogin Niger", "MOSOP"]
+  },
+  "sections": {
+    "overviewLabel": "Bayani & Tarihin Baya",
+    "documentsLabel": "Takardun Asali",
+    "documentsHeading": "Rubutu, Jawabai & Hotuna",
+    "timelineLabel": "Jerin Lokaci",
+    "timelineHeading": "Manyan Abubuwan da Suka Faru",
+    "teachingLabel": "Kayan Koyarwa",
+    "teachingHeading": "Don Malamai & Ɗalibai"
+  },
+  "sidebar": {
+    "label": "Su Tara",
+    "executed": "An kashe su a ranar 10 ga Nuwamba 1995"
+  },
+  "courtroom": {
+    "heading": "Ɗakin Kotun Soja",
+    "location": "Port Harcourt, 1995",
+    "body": "Rikodin guda huɗu suna yin rikodin Kotun Soja ta Musamman ta 1995 daga matsayi daban-daban — kowanne yana nuna yadda wurin da mutum yake zaune a cikin ɗakin ya tsara taɗawar sa da abin da ya faru.",
+    "footnote": "Za a ƙara haɗin rikodin yayin da suka zama akwai.",
+    "heroFootnote": "Za a ƙara haɗin rikodin yayin da suka zama akwai."
+  },
+  "perspectives": [
+    {
+      "id": "judge",
+      "label": "Kujerar Alkali",
+      "position": "Kujerar Kotun — Bango na Arewa",
+      "description": "Daga matsayin alkali na kotun soja. Wadanda ake tuhuma suna tsaye a gabanka. Nauyin ikon gwamnati yana a bayanka."
+    },
+    {
+      "id": "front",
+      "label": "Jere na Farko",
+      "position": "Filin Jama'a — Jere na 1",
+      "description": "A bayan wadanda ake tuhuma. Kusa ka don ganin fuskokinsu. Kalmomi na kotun suna faɗuwa a nauyi a iska tsakaninku."
+    },
+    {
+      "id": "back",
+      "label": "Bayan Dakin",
+      "position": "Filin Jama'a — Baya",
+      "description": "Daga bayan dakin filin jama'a. Wadanda ake tuhuma ƴan ƙanana ne a gaba. Dakin yana da fadi. Sauti yana tafiya daban a nan."
+    },
+    {
+      "id": "gallery",
+      "label": "Gefe na Gini",
+      "position": "Sashen Manema Labarai Masu Takunkumi",
+      "description": "Inda aka ba masu sa ido na ƙasashen duniya da manema labarai izinin zaune, a ƙarƙashin takunkumi. Wata kusurwa daban akan iko."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "The Trial and Execution of Nine Ogoni Activists, 1995",
+    "description": "A documentation of the 1995 military tribunal and execution of Ken Saro-Wiwa and eight Ogoni activists, and the censored trial speech that was never permitted in court.",
+    "tags": ["Environmental Justice", "Political Prisoners", "Nigeria", "Niger Delta", "MOSOP"]
+  },
+  "sections": {
+    "overviewLabel": "Overview & Historical Context",
+    "documentsLabel": "Primary Documents",
+    "documentsHeading": "Texts, Speeches & Photographs",
+    "timelineLabel": "Timeline",
+    "timelineHeading": "Key Events",
+    "teachingLabel": "Teaching Resources",
+    "teachingHeading": "For Educators & Students"
+  },
+  "sidebar": {
+    "label": "The Nine",
+    "executed": "Executed 10 November 1995"
+  },
+  "courtroom": {
+    "heading": "The Tribunal Room",
+    "location": "Port Harcourt, 1995",
+    "body": "Four recordings document the 1995 Special Military Tribunal from distinct positions — each reflecting how location in the room shaped one's encounter with the proceedings.",
+    "footnote": "Recordings will be linked as they become available.",
+    "heroFootnote": "Recordings will be linked as they become available."
+  },
+  "perspectives": [
+    {
+      "id": "judge",
+      "label": "Judge's Bench",
+      "position": "Tribunal Bench — North Wall",
+      "description": "From the military tribunal judge's position. The accused stand before you. The weight of the state's authority is at your back."
+    },
+    {
+      "id": "front",
+      "label": "Front Row",
+      "position": "Public Gallery — Row 1",
+      "description": "Behind the accused. You are close enough to see their faces. The tribunal's words land heavy in the air between you."
+    },
+    {
+      "id": "back",
+      "label": "Back of Room",
+      "position": "Public Gallery — Rear",
+      "description": "From the rear of the gallery. The accused are small figures at the front. The room feels vast. Sound carries differently here."
+    },
+    {
+      "id": "gallery",
+      "label": "Side Gallery",
+      "position": "Restricted Press Section",
+      "description": "Where international observers and press were permitted to sit, under restriction. A different angle on power."
+    }
+  ]
+}

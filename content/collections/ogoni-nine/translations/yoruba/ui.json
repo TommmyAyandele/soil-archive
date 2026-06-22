@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "Ìdájọ́ àti Ìpànìyàn Àwọn Akẹ́yìn-Ẹ̀tọ́ Ogoni Mẹsàán, 1995",
+    "description": "Àkọsílẹ̀ ìdájọ́ ilé-ẹjọ́ ológun 1995 àti ìpànìyàn Ken Saro-Wiwa àti àwọn akẹ́yìn-ẹ̀tọ́ Ogoni mẹjọ mìíràn, àti ọ̀rọ̀ ìdájọ́ tí wọ́n fòfin de tí a kò gba laàyè rárá láti kà nínú ilé-ẹjọ́.",
+    "tags": ["Ìdájọ́ Àyíká", "Àwọn Ẹlẹ́wọ̀n Ìṣèlú", "Nàìjíríà", "Niger Delta", "MOSOP"]
+  },
+  "sections": {
+    "overviewLabel": "Àkópọ̀ & Ìtàn Àgbègbè",
+    "documentsLabel": "Àwọn Ìwé Àkọsílẹ̀ Àkọ́kọ́",
+    "documentsHeading": "Àwọn Ọ̀rọ̀, Ìsọ̀rọ̀ & Àwòrán",
+    "timelineLabel": "Àkójọ Àkókò",
+    "timelineHeading": "Àwọn Ìṣẹ̀lẹ̀ Pàtàkì",
+    "teachingLabel": "Ohun Èlò Ìkọ́nilẹ́kọ̀ọ́",
+    "teachingHeading": "Fún Àwọn Olùkọ́ & Àwọn Akẹ́kọ̀ọ́"
+  },
+  "sidebar": {
+    "label": "Mẹsàán Náà",
+    "executed": "Wọ́n pa wọn ní ọjọ́ 10 oṣù Kọkànlá 1995"
+  },
+  "courtroom": {
+    "heading": "Ilé-Ẹjọ́ Ológun",
+    "location": "Port Harcourt, 1995",
+    "body": "Àwọn gbigbẹ̀ mẹ́rin ṣàkọsílẹ̀ Ilé-Ẹjọ́ Ológun Pàtàkì 1995 láti àwọn ipò ọ̀tọ̀ọ̀tọ̀ — ẹni kọ̀ọ̀kan fihàn bí ipò ẹni nínú yàrá ṣe dá apẹẹrẹ ìfarakanra ẹni pẹ̀lú ohun tí ó ṣẹlẹ̀.",
+    "footnote": "Àwọn asopọ̀ ìgbẹ̀ yóò fi kun bí wọ́n ṣe di wà.",
+    "heroFootnote": "Àwọn asopọ̀ ìgbẹ̀ yóò fi kun bí wọ́n ṣe di wà."
+  },
+  "perspectives": [
+    {
+      "id": "judge",
+      "label": "Ìjókòó Adájọ́",
+      "position": "Ìjókòó Ilé-Ẹjọ́ — Ògiri Àríwá",
+      "description": "Láti ipò adájọ́ ilé-ẹjọ́ ológun. Àwọn tí a fẹ̀sùn kan wọn dúró níwájú rẹ. Ìjùmọ̀ sọ agbára ìjọba wà lẹ́yìn rẹ."
+    },
+    {
+      "id": "front",
+      "label": "Ìjókòó Àkọ́kọ́",
+      "position": "Gbọ̀ngàn Gbogbo Ènìyàn — Ọ̀nà 1",
+      "description": "Lẹ́yìn àwọn tí a fẹ̀sùn kan wọn. O wà nítòsí tó fún ọ láti rí ojú wọn. Àwọn ọ̀rọ̀ ilé-ẹjọ́ jẹ́ wúwo nínú afẹ́fẹ́ tí ó wà láàárín yín."
+    },
+    {
+      "id": "back",
+      "label": "Ìpẹ̀yìn Yàrá",
+      "position": "Gbọ̀ngàn Gbogbo Ènìyàn — Ìpẹ̀yìn",
+      "description": "Láti ìpẹ̀yìn gbọ̀ngàn. Àwọn tí a fẹ̀sùn kan wọn jẹ́ ọ̀pọ̀lọpọ̀ ẹni kékeré ní iwájú. Yàrá náà dàbí ẹni pé ó gbòòrò. Ohùn ń rìn ọ̀nà ọ̀tọ̀ níbẹ̀."
+    },
+    {
+      "id": "gallery",
+      "label": "Ẹ̀gbẹ́ Gẹ̀lẹ̀dẹ̀",
+      "position": "Apá Àwọn Akọ̀ròyìn Tí A Dènà",
+      "description": "Ibi tí wọ́n gbà àwọn olùwòye àgbáyé àti àwọn akọ̀ròyìn láyè láti jókòó, lábẹ́ ìdènà. Ìhàngún ọ̀tọ̀ lórí agbára."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "hero": {
+    "subtitle": "Sọlọ Nẹ Igbu Nar Ogoni Biakporum, 1995",
+    "description": "Ndekọ nke ikpe ụlọ ọchịchọ soja 1995 na igbu Ken Saro-Wiwa na nar Ogoni asatọ ọzọ, na ọrọ ikpe a machibidoro nke o ghara iji na ụlọ ikpe.",
+    "tags": ["Ikpe Ziri Ezi Gburugburu Ebe Obibi", "Nar Mkpọrọ Ndọrọ", "Nigeria", "Niger Delta", "MOSOP"]
+  },
+  "sections": {
+    "overviewLabel": "Nchọpụta & Ihe Mere Eme",
+    "documentsLabel": "Akwụkwọ Isi",
+    "documentsHeading": "Ederede, Ọrọ & Foto",
+    "timelineLabel": "Usoro Oge",
+    "timelineHeading": "Ihe Ndị Kachasị Mkpa",
+    "teachingLabel": "Ihe Ọmụmụ Maka Ndị Nkuzi",
+    "teachingHeading": "Maka Ndị Nkuzi & Ụmụ Akwụkwọ"
+  },
+  "sidebar": {
+    "label": "Nar Biakporum",
+    "executed": "A sọlọ ha wii 10 Nọvemba 1995"
+  },
+  "courtroom": {
+    "heading": "Ụlọ Ikpe Ọchịchọ",
+    "location": "Port Harcourt, 1995",
+    "body": "Ndekọ anọ na-egosi ikpe ọchịchọ soja pụrụ iche nke 1995 site n'ọnọdụ dị iche iche — onye ọ bụla na-egosi otú ebe ị nọ n'ụlọ ahụ tụgharịrị ihe ị hụ nke ihe mere eme.",
+    "footnote": "A ga-etinye njikọ ndekọ ka ha na-adị.",
+    "heroFootnote": "A ga-etinye njikọ ndekọ ka ha na-adị."
+  },
+  "perspectives": [
+    {
+      "id": "judge",
+      "label": "Oche Onye Ikpe",
+      "position": "Oche Ọchịchọ — Ọnọdụ Ugwu",
+      "description": "Site n'ọnọdụ onye ikpe ọchịchọ soja. Nar a tụrụ n'ebubo na-eme ihu gị. Ibu ọchịchọ olubu dị n'azụ gị."
+    },
+    {
+      "id": "front",
+      "label": "Rọo Mbụ",
+      "position": "Ebe Ndị Ojii — Rọo Mbụ",
+      "description": "N'azụ nar a tụrụ n'ebubo. I nọ nso nke ọma iji hụ ihu ha. Okwu ọchịchọ na-ada arọ n'ikuku dị n'etiti ụnụ."
+    },
+    {
+      "id": "back",
+      "label": "Azụ Ụlọ",
+      "position": "Ebe Ndị Ojii — Azụ",
+      "description": "Site n'azụ ebe ndị ojii. Nar a tụrụ n'ebubo dị obere n'ihu. Ụlọ ahụ yiri ka o buru ibu. Ụda na-agagharị iche iche ebe a."
+    },
+    {
+      "id": "gallery",
+      "label": "Ebe Ndị Ojii N'akụkụ",
+      "position": "Ngalaba Ndị Akụkọ A Machibidoro",
+      "description": "Ebe e kwere ndị hụ ihe nke mba ụwa na ndị nta akụkọ isi nọdụ, n'okpuru ihe machibidoro. Ntụ anya dị iche banyere ike."
+    }
+  ]
+}
